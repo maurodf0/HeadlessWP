@@ -6,6 +6,14 @@ html {
   color-scheme: dark;
 }
 
+h1 {
+  @apply text-5xl md:text-7xl font-medium mb-2;
+}
+
+p {
+  @apply text-gray-400 mb-16;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   background-image: url("/assets/noise-texture.svg");
