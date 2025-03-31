@@ -15,11 +15,12 @@
 
 <template>
     <button 
-        class="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+       
         :class="{
-            'bg-blue-500 hover:bg-blue-700': variant === 'primary',
-            'bg-gray-500 hover:bg-gray-700': variant === 'secondary'
+            'primary': variant === 'primary',
+            'secondary': variant === 'secondary'
         }"
      >
+     <slot />
     </button>
 </template>
