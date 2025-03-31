@@ -18,10 +18,11 @@ const { data } = await useFetch('https://maurodefalco.it/wp-json/', {
             Fast, Secure, <em>Customized</em> Web Experiences.
         </h1>
         <p class="text-gray-400 max-w-lg mx-auto">{{ data.description }}</p>
-        <div class="flex justify-center mt-8 gap-8 mx-auto align-center w-100">
+        <div class="flex justify-center mt-4 gap-8 mx-auto align-center w-100">
             <NuxtLink to="/about" class="primary">About</NuxtLink>
             <NuxtLink to="/contact" class="onlyLink">Contact</NuxtLink>
         </div>
+        
     </div>
 
 
