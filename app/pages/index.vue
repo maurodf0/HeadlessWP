@@ -15,12 +15,12 @@ const { data } = await useFetch('https://maurodefalco.it/wp-json/', {
         </div>
         <h1
             class="text-5xl md:text-7xl  mb-4 font-medium bg-gradient-to-t from-gray-300 to-gray-100 bg-clip-text text-transparent">
-            Fast, Secure, Customized Web Experiences.
+            Fast, Secure, <em>Customized</em> Web Experiences.
         </h1>
         <p class="text-gray-400 max-w-lg mx-auto">{{ data.description }}</p>
         <div class="flex justify-center mt-8 gap-8 mx-auto align-center w-100">
-            <AppButton variant="primary">Get Started</AppButton>
-            <AppButton variant="onlyLink">Contact</AppButton>
+            <NuxtLink to="/about" class="primary">About</NuxtLink>
+            <NuxtLink to="/contact" class="onlyLink">Contact</NuxtLink>
         </div>
     </div>
 
