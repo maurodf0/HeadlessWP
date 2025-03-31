@@ -5,7 +5,7 @@
             type: String,
             default: 'primary',
             validator: (value: string) => {
-                return ['primary', 'glow'].includes(value);
+                return ['primary', 'glow', 'onlyLink'].includes(value);
             }
         }
 
@@ -18,7 +18,8 @@
        
         :class="{
             'primary': variant === 'primary',
-            'secondary': variant === 'secondary'
+            'secondary': variant === 'secondary',
+            'onlyLink': variant === 'onlyLink',
         }"
      >
      <slot />
