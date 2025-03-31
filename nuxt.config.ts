@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts'],
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-01-06',
   devtools: { enabled: true },
   app: {
     head: {
