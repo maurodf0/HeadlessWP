@@ -11,12 +11,14 @@
             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </template>
     </PagesIntroContent>
 
+
  
     <div v-if="posts" class="container max-w-[1080px] mx-auto grid grid-cols-3 gap-8">
-        <div v-for="post in posts" :key="post.id" class="card" >
+        <div v-for="post in posts" :key="post.id" class="card bg-gray-950 py-4 border border-opacity-45 border-neutral-700 px-4 rounded-lg" >
             <div class="card-body">
-                <h2 class="card-title">{{ post.title.rendered }}</h2>
-                <p class="card-text">{{ post.excerpt.rendered }}</p>
+                <img :src="post" alt="Post Image" class="mb-4 rounded-lg w-full h-48 object-cover">
+                <h2 class="text-xl font-medium mb-2 card-title">{{ post.title.rendered }}</h2>
+                <p class="mb-4 card-text">{{ post.excerpt.rendered.substring(0, 150) }}...</p>
                 <a :href="post.link" class="btn btn-primary">Read more</a>
             </div>
         </div>
