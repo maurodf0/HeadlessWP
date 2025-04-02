@@ -23,5 +23,8 @@ const { data } = await useFetch('https://maurodefalco.it/wp-json/', {
         </div>
     </div>
 
+    <PagesLogoCarousel />
+
+
 
 </template>
