@@ -2,9 +2,11 @@
     
     const route = useRoute();
     const slug = route.params.id;
-    const { data: singlePost } = await useFetch<any>(
+    const { data: singlePost } = await useFetch(
     `https://maurodefalco.it/wp-json/wp/v2/posts/${slug}?_embed`); 
 </script>
+
+
 
 <template>
     <PagesIntroContent>
