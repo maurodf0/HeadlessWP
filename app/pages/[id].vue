@@ -13,7 +13,7 @@
 
 
 <template>
-    
+
     <PagesIntroContent>
         <template #title>{{ singlePost[0].title.rendered }}</template>
         <template #description>
@@ -23,10 +23,10 @@
     </PagesIntroContent>
 
     <div class="image-container max-w-[1080px] mx-auto">
-        <img :src="singlePost[0]._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image" class="mb-16 rounded-lg w-full border-lg object-cover"> 
+        <img :src="singlePost[0]._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image" class="mb-4 md:mb- p-4 rounded-lg w-full object-cover"> 
     </div>
 
-    <div v-html="singlePost[0].content.rendered" class="max-w-[1080px] mx-auto !prose !prose-invert prose-xl">
+    <div v-html="singlePost[0].content.rendered" class="max-w-[1080px] mx-auto !prose !prose-invert prose-xl p-4">
        
     </div>
 
