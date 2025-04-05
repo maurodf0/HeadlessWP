@@ -13,7 +13,7 @@
             <slot name="title" />
         </h1>
         <p class="text-gray-400"
-            :class="props.length">
+        :class="props.length">
             <slot name="description" />
         </p>
     </AppContainer>

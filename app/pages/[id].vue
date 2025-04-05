@@ -17,18 +17,16 @@
 
     <PagesIntroContent>
         <template #title>{{ singlePost[0].title.rendered }}</template>
-        <template #description>{{ singlePost[0].excerpt.rendered }}</template>
+        <template length="max-w-2xl" #description>{{ singlePost[0].excerpt.rendered }}</template>
     </PagesIntroContent>
 
     <div class="image-container max-w-[1080px] mx-auto">
         <img :src="imageData.source_url" alt="Post Image" class="mb-16 rounded-lg w-full border-lg object-cover">
     </div>
 
-    <div class="container max-w-[1080px] mx-auto prose prose-inver">
+    <div class="container max-w-[1080px] p-4 mx-auto prose prose-inver">
         {{ singlePost[0].content.rendered }}
     </div>
 
-    <pre>
-{{ singlePost }}
-</pre>
+
 </template>
