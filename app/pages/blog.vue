@@ -12,7 +12,7 @@
             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </template>
     </PagesIntroContent>
  
-    <div v-if="posts" class="container max-w-[1080px] mx-auto grid grid-cols-3 gap-8">
+    <div v-if="posts" class="container max-w-[1080px] p-4 mx-auto grid md:grid-cols-3 gap-8">
         <div v-for="post in posts" :key="post.id" class="card bg-gray-950 py-4 border border-opacity-45 border-neutral-700 px-4 rounded-lg" >
             <div class="card-body">
               <img
