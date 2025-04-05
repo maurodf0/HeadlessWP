@@ -20,7 +20,7 @@
                 :src="post._embedded?.['wp:featuredmedia']?.[0]?.source_url" alt="Post Image" class="mb-4 rounded-lg w-full h-48 object-cover">
                 <h2 class="text-xl font-medium mb-2 card-title">{{ post.title.rendered }}</h2>
                 <p class="mb-4 card-text">{{ post.excerpt.rendered.substring(0, 150) }}...</p>
-                <a :href="post.link" class="btn btn-primary">Read more</a>
+                <a :href="post.slug" class="btn btn-primary">Read more</a>
             </div>
         </div>
     </div>

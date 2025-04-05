@@ -3,15 +3,25 @@
     const route = useRoute();
     const slug = route.params.id;
     const { data: singlePost } = await useFetch(
-    `https://maurodefalco.it/wp-json/wp/v2/posts/${slug}?_embed`); 
+    `https://maurodefalco.it/wp-json/wp/v2/posts?slug=${slug}`); 
+
 </script>
 
 
 
+
 <template>
+
+<pre>
+{{ singlePost }}
+</pre>
+
     <PagesIntroContent>
-        <template #title>Single Blog Post</template>
-        <template #description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </template>
+        <template #title>{{ singlePost[0].title.rendered }}</template>
+        <template #description>{{ singlePost[0].excerpt.rendered }}</template>
     </PagesIntroContent>
+
+    <div class="container max-w-[1080px] mx-auto prose">
+        {{ singlePost[0].content.rendered }}
+    </div>
 </template>
