@@ -6,6 +6,7 @@
     const { data: imageData } = await useFetch(`https://maurodefalco.it/wp-json/wp/v2/media/${singlePost.value[0].featured_media}`);
 
     console.log(imageData.value);
+    const excerpt = singlePost.value[0].excerpt.rendered.substring(0, 155);
 
 
 </script>
@@ -17,15 +18,18 @@
 
     <PagesIntroContent>
         <template #title>{{ singlePost[0].title.rendered }}</template>
-        <template length="max-w-2xl" #description>{{ singlePost[0].excerpt.rendered }}</template>
+        <template #description>
+            <div v-html="excerpt"></div>
+        </template>
+
     </PagesIntroContent>
 
     <div class="image-container max-w-[1080px] mx-auto">
         <img :src="imageData.source_url" alt="Post Image" class="mb-16 rounded-lg w-full border-lg object-cover">
     </div>
 
-    <div class="container max-w-[1080px] p-4 mx-auto prose prose-inver">
-        {{ singlePost[0].content.rendered }}
+    <div v-html="singlePost[0].content.rendered" class="max-w-[1080px] mx-auto !prose !prose-invert">
+       
     </div>
 
 
