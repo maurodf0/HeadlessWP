@@ -7,8 +7,6 @@
     const singlePost = singlePosts.value[0];
     const excerpt = singlePost.excerpt.rendered.substring(0, 155);
 
-    console.log(singlePost._embedded['wp:term'][0]);
-
 </script>
 
 <template>
