@@ -5,7 +5,7 @@
     const { data: singlePosts } = await useFetch(`https://maurodefalco.it/wp-json/wp/v2/posts?slug=${slug}&_embed`);  
     
     const singlePost = singlePosts.value[0];
-    const excerpt = singlePost.excerpt.rendered.substring(0, 155);
+    const excerpt = singlePost.excerpt.rendered;
 
 </script>
 
@@ -15,12 +15,11 @@
     {{ singlePost }}
     </pre> -->
 
-    <PagesIntroContent>
+    <PagesIntroContent length="max-w-full">
         <template #title>{{ singlePost.title.rendered }}</template>
         <template #description>
-            <div v-html="excerpt"></div>
+            <em><div v-html="excerpt"></div></em>
         </template>
-
     </PagesIntroContent>
 
     <article class="!max-w-[880px] mx-auto  prose !prose-invert p-4">

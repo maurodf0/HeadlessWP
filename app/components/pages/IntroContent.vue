@@ -1,10 +1,12 @@
 <script setup lang="ts">
- const props = defineProps({
-    length: {
-        type: String,
-        default: 'max-w-lg'
-    },
- })
+const props = defineProps({
+  length: {
+    type: String,
+    default: 'max-w-lg'
+  }
+})
+
+const { length } = props
 </script>
 
 <template>
@@ -13,7 +15,7 @@
             <slot name="title" />
         </h1>
         <p class="text-gray-400"
-        :class="props.length">
+        :class="length">
             <slot name="description" />
         </p>
     </AppContainer>
