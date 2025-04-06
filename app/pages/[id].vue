@@ -7,7 +7,7 @@
     const singlePost = singlePosts.value[0];
     const excerpt = singlePost.excerpt.rendered.substring(0, 155);
 
-    console.log(singlePost._embedded['author'][0].avatar_urls);
+    console.log(singlePost._embedded['wp:term'][0]);
 
 </script>
 
@@ -41,6 +41,15 @@
 
     <div v-html="singlePost.content.rendered" class="max-w-[1080px] mx-auto !prose !prose-invert prose-xl p-4">
        
+    </div>
+
+    <div class="artile-meta flex gap-4 justify-between items-center max-w-[1080px] mx-auto">
+        <div class="categories flex gap-2 flex-wrap">
+            <span v-for="category in singlePost._embedded['wp:term'][0]" :key="category.id" class="category bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                {{ category.name }}
+            </span>
+        </div>
+
     </div>
 
 
