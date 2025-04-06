@@ -14,7 +14,7 @@ const { length } = props
         <h1>
             <slot name="title" />
         </h1>
-        <p class="text-gray-400"
+        <p 
         :class="length">
             <slot name="description" />
         </p>

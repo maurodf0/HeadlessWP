@@ -22,7 +22,7 @@
         </template>
     </PagesIntroContent>
 
-    <article class="!max-w-[880px] mx-auto  prose !prose-invert p-4">
+    <article class="!max-w-[880px] mx-auto prose !prose-invert p-4">
 
     <div class="image-container mx-auto">
         <img :src="singlePost._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image" class="mb-4 md:mb-rounded-lg w-full object-cover"> 
