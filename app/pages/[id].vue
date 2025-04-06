@@ -41,15 +41,21 @@
     <div v-html="singlePost.content.rendered" class="mx-auto">
        
     </div>
+</article>
 
-    <div class="artile-meta mt-6 flex gap-4 justify-between items-center mx-auto">
+    <div class="artile-meta mt-6 max-w-[880px] mx-auto flex gap-4 justify-between items-center px-4 mb-8">
         <div class="categories flex gap-2 flex-wrap">
-            <span v-for="category in singlePost._embedded['wp:term'][0]" :key="category.id" class="category bg-gray-800 text-gray-300 px-2 py-1 rounded-full">
-                <NuxtLink :to="`/category/${category.slug}`">{{ category.name }}</NuxtLink>
-            </span>
+             <NuxtLink 
+                v-for="category in singlePost._embedded['wp:term'][0]" 
+                :key="category.id" 
+                :to="`/category/${category.slug}`"
+                class="text-decoration-none"> 
+                <span class="category bg-gray-800 text-gray-200 px-4 py-2 rounded-full hover:bg-sky-600/95 font-normal">
+                    {{ category.name }}
+                </span>
+            </NuxtLink>
         </div>
 
     </div>
-</article>
 
 </template>
