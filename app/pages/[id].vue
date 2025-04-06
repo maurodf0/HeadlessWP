@@ -25,7 +25,7 @@
     <article class="!max-w-[880px] mx-auto prose !prose-invert p-4">
 
     <div class="image-container mx-auto">
-        <img :src="singlePost._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image" class="mb-4 md:mb-rounded-lg w-full object-cover"> 
+        <img :src="singlePost._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image" class="mb-4 md:rounded-lg w-full object-cover"> 
     </div>
 
     <div class="flex gap-4 md:gap-8 mt-4 justify-between items-center mx-auto">
