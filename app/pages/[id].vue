@@ -7,6 +7,7 @@
     const singlePost = singlePosts.value[0];
     const excerpt = singlePost.excerpt.rendered.substring(0, 155);
 
+    console.log(singlePost._embedded['author'][0].avatar_urls);
 
 </script>
 
@@ -29,8 +30,9 @@
     </div>
 
     <div class="flex gap-4 md:gap-8 mt-4 justify-between items-center max-w-[1080px] mx-auto">
-        <div class="author prose prose-invert">
-          By:  {{ singlePost._embedded['author'][0].name }}
+        <div class="author prose prose-invert flex align-center gap-2">
+            Written by: <img :src="singlePost._embedded['author'][0].avatar_urls['96']" class="rounded-full w-8 h-8 mt-0">
+          {{ singlePost._embedded['author'][0].name }}
         </div>
         <div class="date prose prose-invert">
            Published on: {{ singlePost.date }}
