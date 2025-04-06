@@ -18,7 +18,7 @@ const { data } = await useFetch<object>('https://maurodefalco.it/wp-json/', {
             class="text-5xl md:text-7xl  mb-4 font-medium bg-gradient-to-t from-gray-300 to-gray-100 bg-clip-text text-transparent">
             Fast, Secure, <em>Customized</em> Web Experiences.
         </h1>
-        <p class="text-gray-400 max-w-lg mx-auto">{{ data?.description }}</p>
+        <p class="text-gray-400 px-4 md:max-w-lg mx-auto">{{ data?.description }}</p>
         <div class="flex justify-center mt-4 gap-8 mx-auto align-center w-100">
             <NuxtLink to="/about" class="primary">About</NuxtLink>
             <NuxtLink to="/contact" class="onlyLink">Contact</NuxtLink>
