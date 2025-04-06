@@ -35,7 +35,7 @@
           {{ singlePost._embedded['author'][0].name }}
         </div>
         <div class="date prose prose-invert">
-           Published on: {{ singlePost.date }}
+           Published on: {{ new Date(singlePost.date).toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' }) }}
         </div>
     </div>
 
