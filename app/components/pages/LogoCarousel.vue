@@ -7,6 +7,7 @@
         <TechLogoNuxt class="w-8 h-8 md:w-12 md:h-12" />
         <TechLogoPhp class="w-8 h-8 md:w-12 md:h-12" />
         <TechLogoGsap class="w-8 h-8 md:w-12 md:h-12" />
-        <TechLogoVue class="w-8 h-8 md:w-12 md:h-12"></TechLogoVue>
+        <TechLogoThree class="w-8 h-8 md:w-12 md:h-12" />
+        <TechLogoFigma class="w-8 h-8 md:w-12 md:h-12" />
     </div>
 </template>
