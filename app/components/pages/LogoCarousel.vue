@@ -1,10 +1,12 @@
+<script setup lang="ts">
+</script>
+
 <template>
-    <div class="flex gap-4 items-center justify-center">
-        <div class="flex items-center justify-center">
-           Img
-        </div>
-        <div class="flex items-center justify-center">
-            Img
-        </div>
+    <div class="flex gap-8 md:gap-16 justify-center items-center opacity-45">
+        <TechLogoVue class="w-8 h-8 md:w-12 md:h-12" /> 
+        <TechLogoNuxt class="w-8 h-8 md:w-12 md:h-12" />
+        <TechLogoPhp class="w-8 h-8 md:w-12 md:h-12" />
+        <TechLogoGsap class="w-8 h-8 md:w-12 md:h-12" />
+        <TechLogoVue class="w-8 h-8 md:w-12 md:h-12"></TechLogoVue>
     </div>
 </template>
