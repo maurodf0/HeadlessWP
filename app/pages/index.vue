@@ -1,5 +1,10 @@
 <script setup lang="ts">
 
+import { gsap } from "gsap";    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const { data } = await useFetch<object>('https://maurodefalco.it/wp-json/', {
     method: 'GET',
 
@@ -54,16 +59,17 @@ const projects = [
 
     <PagesLogoCarousel />
 
-    <div class="max-w-[880px] mx-auto projects-pin relative">
-        <div class="flex flex-col p-4 mt-16 relative">
+    <div class="max-w-[880px] mx-auto projects-pin relative min-h-[150vh]">
+        <div class="flex flex-col p-4 mt-20 relative">
             <div 
                 v-for="(project, index) in projects" 
                 :key="project.id"
                 :style="{
-                    transform: `translateY(${index * 30}px)`,
-                    zIndex: projects.length - index,
+                    transform: `translate(0, ${index * 30}px)`,
+                    zIndex: projects.length + index,
+
                 }"
-                class="flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-700/45 bg-gray-950 rounded-lg shadow-lg transition-transform duration-300 ease-in-out absolute"
+                class="hover:border-sky-400/45 transition-all projects-pin-item sticky top-40 flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-700/45 bg-gray-950 rounded-lg shadow-lg transition-transform duration-300 ease-in-out"
             >
                 <h2 class="text-2xl font-medium">{{ project.title }}</h2>
                 <p class="mb-2">{{ project.description }}</p>
@@ -78,6 +84,8 @@ const projects = [
             </div>
         </div>
     </div>
+
+    <div class="h-full" style="height: 100vh;"></div>
 
 
 </template>
