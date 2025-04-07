@@ -50,7 +50,7 @@
                 :key="category.id" 
                 :to="`/category/${category.slug}`"
                 class="text-decoration-none"> 
-                <span class="category bg-gray-800 text-gray-200 px-4 py-2 rounded-full hover:bg-sky-600/95 font-normal">
+                <span class="category bg-gray-800 text-gray-200 px-4 py-2 rounded-full hover:bg-sky-400/95 font-normal">
                     {{ category.name }}
                 </span>
             </NuxtLink>
