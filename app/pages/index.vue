@@ -54,25 +54,26 @@ const projects = [
 
     <PagesLogoCarousel />
 
-    <div class="max-w-[880px] mx-auto projects-pin">
-        <div class="flex flex-wrap p-4  mt-16 relative">
-            <div v-for="project in projects" :key="project.id">
-                <div class="flex flex-col gap-4 w-full p-4 text-wrapper border-4 border-gray-700/45 bg-gray-950 rounded-lg absolute">
-                    <h2 class="text-2xl font-medium">
-                    {{ project.title }}
-                    </h2>
-                    <p class="mb-2">
-                    {{ project.description }}
-                    </p>
-                    <hr>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        <div v-for="(stack, index) in project.tech" :key="stack.index">
-                        <span class="bg-gray-800 text-gray-200 px-2 py-2 rounded-full font-normal">
+    <div class="max-w-[880px] mx-auto projects-pin relative">
+        <div class="flex flex-col p-4 mt-16 relative">
+            <div 
+                v-for="(project, index) in projects" 
+                :key="project.id"
+                :style="{
+                    transform: `translateY(${index * 30}px)`,
+                    zIndex: projects.length - index,
+                }"
+                class="flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-700/45 bg-gray-950 rounded-lg shadow-lg transition-transform duration-300 ease-in-out absolute"
+            >
+                <h2 class="text-2xl font-medium">{{ project.title }}</h2>
+                <p class="mb-2">{{ project.description }}</p>
+                <hr class="border-gray-700">
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <div v-for="(stack, techIndex) in project.tech" :key="techIndex">
+                        <span class="bg-gray-800 text-gray-200 px-2 py-1 rounded-full font-normal text-sm">
                             {{ stack }}
                         </span>
-                        </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
