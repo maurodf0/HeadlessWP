@@ -1,5 +1,7 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+    <VueLenis root>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </VueLenis>
 </template>
