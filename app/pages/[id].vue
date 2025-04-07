@@ -11,10 +11,6 @@
 
 <template>
 
-<!-- <pre>
-    {{ singlePost }}
-    </pre> -->
-
     <PagesIntroContent length="max-w-full">
         <template #title>{{ singlePost.title.rendered }}</template>
         <template #description>
