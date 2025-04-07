@@ -1,18 +1,41 @@
-<script setup lanf="ts">
+<script setup lang="ts">
+
+interface WpPost {
+  id: number;
+  title: { rendered: string };
+  excerpt: { rendered: string };
+  content: { rendered: string };
+  date: string;
+  _embedded: {
+    'wp:featuredmedia': Array<{
+      source_url: string;
+    }>;
+    author: Array<{
+      name: string;
+      avatar_urls: { [key: string]: string };
+    }>;
+    'wp:term': Array<Array<{
+      id: number;
+      name: string;
+      slug: string;
+    }>>;
+  };
+}
+
     
     const route = useRoute();
-    const slug = route.params.id;
-    const { data: singlePosts } = await useFetch(`https://maurodefalco.it/wp-json/wp/v2/posts?slug=${slug}&_embed`);  
+    const slug = route.params.id as string;
+    const { data: singlePosts } = await useFetch<WpPost[]>(`https://maurodefalco.it/wp-json/wp/v2/posts?slug=${slug}&_embed`);  
     
-    const singlePost = singlePosts.value[0];
-    const excerpt = singlePost.excerpt.rendered;
+    const singlePost = singlePosts.value?.[0];
+    const excerpt = singlePost?.excerpt.rendered;
 
 </script>
 
 <template>
 
     <PagesIntroContent length="max-w-full">
-        <template #title>{{ singlePost.title.rendered }}</template>
+        <template #title>{{ singlePost?.title.rendered }}</template>
         <template #description>
             <em><div v-html="excerpt"></div></em>
         </template>
@@ -21,20 +44,20 @@
     <article class="!max-w-[880px] mx-auto prose !prose-invert p-4">
 
     <div class="image-container mx-auto">
-        <img :src="singlePost._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image" class="mb-4 md:rounded-lg w-full object-cover"> 
+        <img :src="singlePost?._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image" class="mb-4 md:rounded-lg w-full object-cover"> 
     </div>
 
     <div class="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 justify-between items-center mx-auto">
         <div class="author prose prose-invert flex align-center gap-2">
-            Written by: <img :src="singlePost._embedded['author'][0].avatar_urls['96']" class="rounded-full w-8 h-8 mt-0">
-          {{ singlePost._embedded['author'][0].name }}
+            Written by: <img :src="singlePost?._embedded?.['author'][0]?.avatar_urls['96']" class="rounded-full w-8 h-8 mt-0">
+          {{ singlePost?._embedded?.['author'][0]?.name }}
         </div>
         <div class="date prose prose-invert">
-           Published on: {{ new Date(singlePost.date).toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+           Published on: {{ new Date(singlePost?.date).toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' }) }}
         </div>
     </div>
 
-    <div v-html="singlePost.content.rendered" class="mx-auto">
+    <div v-html="singlePost?.content.rendered" class="mx-auto">
        
     </div>
 </article>

@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const { data } = await useFetch<object>('https://maurodefalco.it/wp-json/', {
+const { data } = await useFetch<{ description?: string }>('https://maurodefalco.it/wp-json/', {
     method: 'GET',
 
 });
@@ -61,29 +61,7 @@ const projects = [
 
     <div class="max-w-[880px] mx-auto projects-pin relative min-h-[150vh] py-8 mt-20">
         <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
-        <div class="flex flex-col p-4 mt-20 relative">
-            <div 
-                v-for="(project, index) in projects" 
-                :key="project.id"
-                :style="{
-                    transform: `translate(0, ${index * 30}px)`,
-                    zIndex: projects.length + index,
-
-                }"
-                class="hover:border-sky-400/45 transition-all projects-pin-item sticky top-40 flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-100/15 bg-gray-950 rounded-lg shadow-lg duration-300 ease-in-out"
-            >
-                <h2 class="text-2xl font-medium">{{ project.title }}</h2>
-                <p class="mb-2">{{ project.description }}</p>
-                <hr class="border-gray-700">
-                <div class="flex flex-wrap gap-2 mt-4">
-                    <div v-for="(stack, techIndex) in project.tech" :key="techIndex">
-                        <span class="bg-gray-800 text-gray-200 px-2 py-1 rounded-full font-normal text-sm">
-                            {{ stack }}
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ProjectCard :projects="projects" />
     </div>
 
     <div class="h-full" style="height: 100vh;"></div>
