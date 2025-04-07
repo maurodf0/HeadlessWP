@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Id from './[id].vue';
-
 
 const { data } = await useFetch<object>('https://maurodefalco.it/wp-json/', {
     method: 'GET',
@@ -27,7 +25,7 @@ const projects = [
         tech: ['GSAP', 'Three.js', 'Lenis'],
     },
     {
-        Id: 4,
+        id: 4,
         title: 'Single User Content',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         tech: ['Php', 'WordPress'],
