@@ -11,7 +11,7 @@ onMounted(() => {
         scrollTrigger: {
             trigger: '.projects-pin',
             start: 'top top',
-            end: 'bottom 20%',
+            end: 'bottom 25%',
             scrub: true,
             pin: true,
             pinSpacing: true,
@@ -24,6 +24,12 @@ onMounted(() => {
         stagger: 2,
         ease: 'none',
     })
+        tl.to(items[3], {
+            rotate: 0,
+            xPercent: 0,
+            duration: 1,
+            ease: 'power2.inOut',
+        })
 
 })
 
