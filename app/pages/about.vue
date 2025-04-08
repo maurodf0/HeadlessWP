@@ -6,6 +6,7 @@ const route = useRoute();
 </script>
 
 <template>
+<div class=" max-w-[1080px] mx-auto flex gap-2 items-center justify-center">
     <PagesIntroContent>
         <template #title>{{ SingleAboutPage.title.rendered }}</template>
         <template #description>
@@ -14,6 +15,6 @@ const route = useRoute();
             </div>
         </template>
     </PagesIntroContent>
-
-    
+    <img src="/assets/m-logo.png" alt="Hero Image" class="opacity-30 w-1/2 h-auto invert">
+</div>
 </template>
