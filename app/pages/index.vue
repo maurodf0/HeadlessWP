@@ -21,15 +21,19 @@ onMounted(() => {
     tl.to(items, {
         xPercent: -300,
         rotate: 25,
-        stagger: 2,
-        ease: 'none',
+        ease: 'ease.inOut',
+        stagger: {
+        each: 2,
+        ease: 'power1.inOut',
+        },
     })
+    if(items[3]) {
         tl.to(items[3], {
             rotate: 0,
             xPercent: 0,
-            duration: 1,
             ease: 'power2.inOut',
         })
+    }
 
 })
 
