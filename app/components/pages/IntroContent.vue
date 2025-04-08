@@ -20,5 +20,7 @@ const { length } = props
         :class="length">
             <slot name="description" />
         </p>
+            <div class="rotate-15 bg-gradient-to-r from-purple-600/65 to-blue-600/20 w-full md:w-1/2 h-[200px] filter blur-[180px] absolute mix-blend-screen top-20 right-11 glow-ball"></div>
+        
     </AppContainer>
 </template>
