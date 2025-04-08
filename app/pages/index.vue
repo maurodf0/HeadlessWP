@@ -94,8 +94,12 @@ const projects = [
 
     <PagesLogoCarousel />
 
-    <div class="max-w-[880px] mx-auto projects-pin relative min-h-[70vh] py-8 mt-20">
-        <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
+    <div class="max-w-[880px] mx-auto projects-pin flex gap-4 relative min-h-[70vh] py-8 mt-[190px]">
+        <div class="project-text max-w-sm mt-4">
+            <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
+            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus libero cumque tempore laudantium iure labore quaerat nesciunt vel vitae nulla suscipit aliquam, alias totam quod quos eaque eius? Illum, veritatis!</p>
+               <NuxtLink to="/projects" class="primary">Discover All</NuxtLink>
+        </div>
         <ProjectCard :projects="projects" />
     </div>
 
