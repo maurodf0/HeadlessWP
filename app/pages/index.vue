@@ -5,6 +5,28 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+onMounted(() => {
+    const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.projects-pin',
+            start: 'top top',
+            end: 'bottom 20%',
+            scrub: true,
+            pin: true,
+            pinSpacing: true,
+            markers: true,
+        }
+    })
+    tl.to(items, {
+        xPercent: -300,
+        rotate: 25,
+        stagger: 2,
+        ease: 'none',
+    })
+
+})
+
 const { data } = await useFetch<{ description?: string }>('https://maurodefalco.it/wp-json/', {
     method: 'GET',
 

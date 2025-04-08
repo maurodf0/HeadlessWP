@@ -17,11 +17,11 @@ const props = defineProps<{
                 v-for="(project, index) in props.projects" 
                 :key="project.id"
                 :style="{
-                    transform: `translate(0, ${index * 30}px)`,
-                    zIndex: projects.length + index,
+                    transform: `translate(${index * +10}px, ${index * -10}px)`,
+                    zIndex: projects.length - index,
 
                 }"
-                class="hover:border-sky-400/45 transition-all projects-pin-item sticky top-40 flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-100/15 bg-gray-950 rounded-lg shadow-lg duration-300 ease-in-out"
+                class="hover:border-sky-400/45 absolute transition-all projects-pin-item top-10 flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-100/15 bg-gray-950 rounded-lg shadow-lg duration-300 ease-in-out"
             >
                 <h2 class="text-2xl font-medium">{{ project.title }}</h2>
                 <p class="mb-2">{{ project.description }}</p>
