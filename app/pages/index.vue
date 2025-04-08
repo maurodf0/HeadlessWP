@@ -5,6 +5,57 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const loading = ref('000') // inizializza come stringa padded
+
+function zeroPad(num: number, places: number): string {
+  return String(num).padStart(places, '0')
+}
+
+onMounted(() => {
+  let obj = { value: 0 }
+
+  const tlOpener = gsap.timeline();
+  tlOpener.to(obj, {
+    value: 100,
+    duration: 3,
+    ease: 'power3.inOut',
+    onUpdate: () => {
+      loading.value = zeroPad(Math.round(obj.value), 3)
+    },
+  })
+  tlOpener.to('.logo-loader', {
+    duration: .5,
+    ease: 'power3.inOut',
+
+    scale: .25,
+    opacity: 0
+  })
+  tlOpener.to('.app-loader', {
+    duration: 1,
+    ease: 'power3.inOut',
+    transform: 'translateY(-100%)',
+    rotate: 0,
+  }, '<')
+
+   
+    tlOpener.from('.heading-level', {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.inOut',
+    },'-=1')
+    tlOpener.from('header', {
+        y: -100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.inOut',
+    })
+
+})
+
+
+
+
 onMounted(() => {
 
     const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
@@ -79,13 +130,13 @@ const projects = [
 
 <template>
 
-    <AppLoader />
+    <AppLoader :loading="loading" />
 
     <div class="hero-wrapper text-center px-4 lg:px-10 max-w-[1080px] mx-auto py-6 md:py-16">
         <div class="rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-full md:w-1/3 h-[120px] filter blur-[160px] absolute mix-blend-screen -z-10 top-16 left-3/3 md:left-1/3">
         </div>
         <h1
-            class="text-5xl md:text-7xl  mb-4 font-medium bg-gradient-to-t from-gray-300 to-gray-100 bg-clip-text text-transparent">
+            class="heading-level text-5xl md:text-7xl  mb-4 font-medium bg-gradient-to-t from-gray-300 to-gray-100 bg-clip-text text-transparent">
             Fast, Secure, <em>Customized</em> Web Experiences.
         </h1>
         <p class="text-gray-400 px-4 md:max-w-lg mx-auto">{{ data?.description }}</p>
