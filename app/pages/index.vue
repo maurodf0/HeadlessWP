@@ -38,6 +38,9 @@ const projects = [
         title: 'Anime Tracker',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         tech: ['Nuxt', 'Vue', 'Nuxt UI', 'PWA'],
+        image: '/assets/AnimeTracker.png',
+        url: 'https://animetracker.maurodefalco.it',
+        github: 'https://github.com/maurodefalco/anime-tracker',
     },
     {
         id: 2,
@@ -81,12 +84,12 @@ const projects = [
 
     <PagesLogoCarousel />
 
-    <div class="max-w-[880px] mx-auto projects-pin relative min-h-[150vh] py-8 mt-20">
+    <div class="max-w-[880px] mx-auto projects-pin relative min-h-[70vh] py-8 mt-20">
         <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
         <ProjectCard :projects="projects" />
     </div>
 
-    <div class="h-full" style="height: 100vh;"></div>
+   <PagesLogoCarousel class="mt-16" />
 
 
 </template>
