@@ -11,7 +11,7 @@ onMounted(() => {
         scrollTrigger: {
             trigger: '.projects-pin',
             start: 'top top',
-            end: 'bottom 25%',
+            end: 'bottom top',
             scrub: true,
             pin: true,
             pinSpacing: true,
