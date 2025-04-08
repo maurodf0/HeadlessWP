@@ -33,7 +33,7 @@
             class="flex flex-col mx-auto max-w-6xl justify-between py-2 md:flex-row md:items-center md:justify-between">
             <div class="flex items-center justify-between">
                 <NuxtLink to="/" class="flex items-center z-50" @click="isOpen = false">
-                    <img src="../../assets/m-logo.png" alt="Logo" class="invert rotate-90 w-20 h-20">
+                    <img src="../../assets/m-logo.png" alt="Logo" class="invert logo rotate-90 w-20 h-20">
                     <span class="ml-2">Mauro De Falco</span>
                 </NuxtLink>
                 <button class="block md:hidden p-2 text-3xl" :aria-expanded="isOpen" @click="isOpen = true">
