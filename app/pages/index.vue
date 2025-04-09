@@ -39,6 +39,13 @@ onMounted(() => {
     transform: 'translateY(-120%)',
     rotate: 5,
   }, '<')
+    .to('.app-loader', {
+        duration: 1,
+        ease: 'power3.inOut',
+        opacity: 0,
+        display: 'none',
+        transform: 'translateY(-120%)',
+    }, '<')
        .from('.glow-effect', { 
         scale: .5,
         duration: .25,
