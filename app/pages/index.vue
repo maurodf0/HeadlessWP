@@ -39,6 +39,13 @@ onMounted(() => {
     transform: 'translateY(-120%)',
     rotate: 5,
   }, '<')
+    tlOpener.to('.second-bg', {
+        duration: 1,
+        delay: .5,
+        ease: 'power3.inOut',
+        transform: 'translateY(-120%)',
+        opacity: 0
+    }, '-=.25')
        tlOpener.from('.glow-effect', { 
         scale: .5,
         duration: .25,
