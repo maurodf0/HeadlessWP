@@ -73,7 +73,7 @@ onMounted(() => {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.projects-pin',
-            start: 'top top',
+            start: 'top +=100px',
             end: 'bottom top',
             scrub: true,
             pin: true,
