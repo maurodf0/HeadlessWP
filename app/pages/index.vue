@@ -70,12 +70,11 @@ onMounted(() => {
     tlOpener.from('.logo', {
         y: -30,
         rotate: 0,
-        opacity: 0,
         duration: .5,
         ease: 'power3.inOut',
     })
     tlOpener.from('.logo-name', {
-        x: -30,
+        xPercent: -50,
         rotate: 0,
         duration: .5,
         ease: 'power3.inOut',
@@ -109,7 +108,7 @@ onMounted(() => {
             scrub: true,
             pin: true,
             pinSpacing: true,
-            markers: true,
+            //  markers: true,
         }
     })
     tl.to(items, {
