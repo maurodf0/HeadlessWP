@@ -34,7 +34,9 @@
             <div class="flex items-center justify-between">
                 <NuxtLink to="/" class="flex items-center z-50" @click="isOpen = false">
                     <img src="../../assets/m-logo.png" alt="Logo" class="invert logo rotate-90 w-20 h-20">
-                    <span class="ml-2">Mauro De Falco</span>
+                    <div class="overflow-hidden">
+                        <span class="logo-name ml-2">Mauro De Falco</span>
+                    </div>
                 </NuxtLink>
                 <button class="block md:hidden p-2 text-3xl" :aria-expanded="isOpen" @click="isOpen = true">
                     <Icon name="ph:list-bold" />

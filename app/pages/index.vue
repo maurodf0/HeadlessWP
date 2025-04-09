@@ -15,6 +15,9 @@ onMounted(() => {
   let obj = { value: 0 }
 
   const navLinks = gsap.utils.toArray('nav a') as HTMLElement[];
+    const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
+    const logoStack = gsap.utils.toArray('.logo-img-stack') as HTMLElement[];
+
   const tlOpener = gsap.timeline();
   tlOpener.to(obj, {
     value: 100,
@@ -33,42 +36,53 @@ onMounted(() => {
   tlOpener.to('.app-loader', {
     duration: 1,
     ease: 'power3.inOut',
-    transform: 'translateY(-100%)',
-    rotate: 0,
+    transform: 'translateY(-120%)',
+    rotate: 5,
   }, '<')
-
-   
+       tlOpener.from('.glow-effect', { 
+        scale: .5,
+        duration: .25,
+        ease: 'power3.inOut',
+        opacity: 0,
+     }, '-=.15')
     tlOpener.from('.heading-level', {
         y: 100,
         opacity: 0,
         duration: 1,
         ease: 'power3.inOut',
-    },'-=1')
+    },'<')
+    tlOpener.from('.p-level', {
+        y: 100,
+        opacity: 0,
+        duration: .5,
+        ease: 'power3.inOut',
+    },)
     tlOpener.from('.logo', {
-        y: -100,
+        y: -30,
+        rotate: 0,
+        opacity: 0,
+        duration: .5,
+        ease: 'power3.inOut',
+    })
+    tlOpener.from('.logo-name', {
+        x: -30,
+        rotate: 0,
         opacity: 0,
         duration: .5,
         ease: 'power3.inOut',
     })
      tlOpener.from(navLinks, {
-        y: -100,
         opacity: 0,
         duration: .5,
         ease: 'power3.inOut',
-        stagger: {
-            each: 0.25,
-            ease: 'power3.inOut',
-        },
-    }, '<')
-
-})
-
-
-
-
-onMounted(() => {
-
-    const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
+    }, '-=.5')
+    tlOpener.from(logoStack, {
+        y: 30,
+        rotate: 0,
+        opacity: 0,
+        duration: .5,
+        ease: 'power3.inOut',
+    })
 
     const tl = gsap.timeline({
         scrollTrigger: {
@@ -143,18 +157,22 @@ const projects = [
     <AppLoader :loading="loading" />
 
     <div class="hero-wrapper text-center px-4 lg:px-10 max-w-[1080px] mx-auto py-6 md:py-16">
-        <div class="rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-full md:w-1/3 h-[120px] filter blur-[160px] absolute mix-blend-screen -z-10 top-16 left-3/3 md:left-1/3">
+        <div class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-full md:w-1/3 h-[120px] filter blur-[160px] absolute mix-blend-screen -z-10 top-16 left-3/3 md:left-1/3">
         </div>
+       
         <h1
             class="heading-level text-5xl md:text-7xl  mb-4 font-medium bg-gradient-to-t from-gray-300 to-gray-100 bg-clip-text text-transparent">
             Fast, Secure, <em>Customized</em> Web Experiences.
         </h1>
-        <p class="text-gray-400 px-4 md:max-w-lg mx-auto">{{ data?.description }}</p>
+        </div>
+         <div class="overflow-hidden">
+         <p class="text-gray-400 px-4 md:max-w-lg mx-auto p-level">{{ data?.description }}</p>
+        </div>
         <div class="flex justify-center mt-4 gap-8 mx-auto align-center w-100">
             <NuxtLink to="/about" class="primary">About</NuxtLink>
             <NuxtLink to="/contact" class="onlyLink">Contact</NuxtLink>
         </div>
-    </div>
+
 
     <PagesLogoCarousel />
 
