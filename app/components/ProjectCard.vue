@@ -37,13 +37,22 @@ const props = defineProps<{
                 <h2 class="text-2xl font-medium">{{ project.title }}</h2>
                 <p class="mb-2">{{ project.description }}</p>
                 <hr class="border-gray-700">
-                <div class="flex flex-wrap gap-2 mt-4">
+                <div class="flex flex-wrap gap-2">
                     <div v-for="(stack, techIndex) in project.tech" :key="techIndex">
                         <span class="bg-gray-800 text-gray-200 px-2 py-1 rounded-full font-normal text-sm">
                             {{ stack }}
                         </span>
                     </div>
                 </div>
+                <hr class="border-gray-700">
+                <div class="flex gap-4 mt-4">
+                    <NuxtLink :to="project.github" class="text-gray-400 hover:text-gray-200">
+                        <Icon name="ph:github-logo" class="w-6 h-6" />
+                    </NuxtLink>
+                    <NuxtLink target="_blank" :to="project.url" class="text-gray-400 hover:text-gray-200">
+                        <Icon name="ph:link-simple-bold" class="w-6 h-6" />
+                    </NuxtLink>
+                    </div>
             </div>
 
 </template>
