@@ -14,9 +14,8 @@ function zeroPad(num: number, places: number): string {
 onMounted(() => {
   let obj = { value: 0 }
 
-  const navLinks = gsap.utils.toArray('nav a') as HTMLElement[];
     const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
-    const logoStack = gsap.utils.toArray('.logo-img-stack') as HTMLElement[];
+
 
   const tlOpener = gsap.timeline();
   tlOpener.to(obj, {
