@@ -5,11 +5,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const props = defineProps({
-  loading: {
-    type: String,
-    default: '000',
-  },
+const props = withDefaults(defineProps<{
+  loading?: string
+}>(), {
+  loading: '000'
 })
 </script>
 

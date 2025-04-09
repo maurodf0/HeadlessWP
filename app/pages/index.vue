@@ -142,7 +142,7 @@ const projects = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         tech: ['Nuxt', 'Vue', 'Nuxt UI', 'PWA'],
         image: '/assets/AnimeTracker.png',
-        url: 'https://animetracker.maurodefalco.it',
+        url: 'https://anime-tracker-delta.vercel.app/',
         github: 'https://github.com/maurodefalco/anime-tracker',
     },
     {
@@ -150,18 +150,27 @@ const projects = [
         title: 'Glide AI',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         tech: ['Nuxt', 'Vue', 'Prismic'],
+        image: '/assets/glide-ai.webp',
+        url: 'https://glide-ai-maurodf0.nuxt.dev/',
+        github: 'https://github.com/maurodf0/glide-ai'
     },
     {
         id: 3,
         title: 'Ringston',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         tech: ['GSAP', 'Three.js', 'Lenis'],
+        image: '/assets/ringston.webp',
+        url: 'https://ringston-khaki.vercel.app/',
+        github: 'https://github.com/maurodf0/ringston'
     },
     {
         id: 4,
         title: 'Single User Content',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         tech: ['Php', 'WordPress'],
+        image: '/assets/single-user-content.webp',
+        url: 'https://it.wordpress.org/plugins/single-user-content/',
+        github: 'https://github.com/maurodf0/wpsuc'
     },
 ]
 
