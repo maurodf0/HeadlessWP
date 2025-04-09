@@ -15,6 +15,6 @@ const route = useRoute();
             </div>
         </template>
     </PagesIntroContent>
-    <img src="@/assets/m-logo.png" alt="Hero Image" class="opacity-30 w-1/2 h-auto invert">
+    <img src="/assets/m-logo.png" alt="Hero Image" class="opacity-30 w-1/2 h-auto invert">
 </div>
 </template>
