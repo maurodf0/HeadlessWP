@@ -46,17 +46,27 @@ onMounted(() => {
         opacity: 0,
      }, '-=.15')
     tlOpener.from('.heading-level', {
-        y: 100,
+        y: 50,
         opacity: 0,
         duration: 1,
         ease: 'power3.inOut',
     },'<')
     tlOpener.from('.p-level', {
-        y: 100,
+        y: 20,
         opacity: 0,
         duration: .5,
         ease: 'power3.inOut',
-    },)
+    })
+    tlOpener.from('.cta-link', {
+        y: 20,
+        opacity: 0,
+        duration: .5,
+        ease: 'power3.inOut',
+        stagger: {
+            amount: 0.2,
+            ease: 'power3.inOut',
+        },
+    })
     tlOpener.from('.logo', {
         y: -30,
         rotate: 0,
@@ -67,21 +77,28 @@ onMounted(() => {
     tlOpener.from('.logo-name', {
         x: -30,
         rotate: 0,
-        opacity: 0,
         duration: .5,
         ease: 'power3.inOut',
     })
-     tlOpener.from(navLinks, {
+     tlOpener.from('nav a', {
         opacity: 0,
         duration: .5,
-        ease: 'power3.inOut',
+        stagger: {
+            amount: 0.25,
+            ease: 'power2.inOut',
+        },
     }, '-=.5')
-    tlOpener.from(logoStack, {
+    tlOpener.from('.logo-img-stack', {
         y: 30,
         rotate: 0,
         opacity: 0,
-        duration: .5,
+        duration: 1,
         ease: 'power3.inOut',
+        stagger: {
+            amount: 1,
+            from: 'start',
+            ease: 'power3.inOut',
+        },
     })
 
     const tl = gsap.timeline({
@@ -160,20 +177,20 @@ const projects = [
         <div class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-full md:w-1/3 h-[120px] filter blur-[160px] absolute mix-blend-screen -z-10 top-16 left-3/3 md:left-1/3">
         </div>
        
-        <h1
-            class="heading-level text-5xl md:text-7xl  mb-4 font-medium bg-gradient-to-t from-gray-300 to-gray-100 bg-clip-text text-transparent">
-            Fast, Secure, <em>Customized</em> Web Experiences.
-        </h1>
+        <div class="overflow-hidden">
+            <h1
+                class="heading-level text-5xl md:text-7xl  mb-4 font-medium bg-gradient-to-t from-gray-300 to-gray-100 bg-clip-text text-transparent">
+                Fast, Secure, <em>Customized</em> Web Experiences.
+            </h1>
         </div>
          <div class="overflow-hidden">
-         <p class="text-gray-400 px-4 md:max-w-lg mx-auto p-level">{{ data?.description }}</p>
+            <p class="text-gray-400 px-4 md:max-w-lg mx-auto p-level">{{ data?.description }}</p>
         </div>
         <div class="flex justify-center mt-4 gap-8 mx-auto align-center w-100">
-            <NuxtLink to="/about" class="primary">About</NuxtLink>
-            <NuxtLink to="/contact" class="onlyLink">Contact</NuxtLink>
+            <NuxtLink to="/about" class="primary cta-link">About</NuxtLink>
+            <NuxtLink to="/contact" class="onlyLink cta-link">Contact</NuxtLink>
         </div>
-
-
+    </div>
     <PagesLogoCarousel />
 
     <div class="max-w-[880px] mx-auto projects-pin flex gap-4 relative min-h-[70vh] py-8 mt-[190px]">
