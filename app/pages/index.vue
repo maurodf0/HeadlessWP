@@ -27,44 +27,37 @@ onMounted(() => {
       loading.value = zeroPad(Math.round(obj.value), 3)
     },
   })
-  tlOpener.to('.logo-loader', {
+  .to('.logo-loader', {
     duration: .5,
     ease: 'power3.inOut',
     scale: .25,
     opacity: 0
   })
-  tlOpener.to('.app-loader', {
+  .to('.app-loader', {
     duration: 1,
     ease: 'power3.inOut',
     transform: 'translateY(-120%)',
     rotate: 5,
   }, '<')
-    tlOpener.to('.second-bg', {
-        duration: 1,
-        delay: .5,
-        ease: 'power3.inOut',
-        transform: 'translateY(-120%)',
-        opacity: 0
-    }, '-=.25')
-       tlOpener.from('.glow-effect', { 
+       .from('.glow-effect', { 
         scale: .5,
         duration: .25,
         ease: 'power3.inOut',
         opacity: 0,
      }, '-=.15')
-    tlOpener.from('.heading-level', {
+    .from('.heading-level', {
         y: 50,
         opacity: 0,
         duration: 1,
         ease: 'power3.inOut',
     },'<')
-    tlOpener.from('.p-level', {
+    .from('.p-level', {
         y: 20,
         opacity: 0,
         duration: .5,
         ease: 'power3.inOut',
     })
-    tlOpener.from('.cta-link', {
+    .from('.cta-link', {
         y: 20,
         opacity: 0,
         duration: .5,
@@ -74,19 +67,19 @@ onMounted(() => {
             ease: 'power3.inOut',
         },
     })
-    tlOpener.from('.logo', {
+    .from('.logo', {
         y: -30,
         rotate: 0,
         duration: .5,
         ease: 'power3.inOut',
     })
-    tlOpener.from('.logo-name', {
+    .from('.logo-name', {
         xPercent: -50,
         rotate: 0,
         duration: .5,
         ease: 'power3.inOut',
     })
-     tlOpener.from('nav a', {
+     .from('nav a', {
         opacity: 0,
         duration: .5,
         stagger: {
@@ -94,7 +87,7 @@ onMounted(() => {
             ease: 'power2.inOut',
         },
     }, '-=.5')
-    tlOpener.from('.logo-img-stack', {
+    .from('.logo-img-stack', {
         y: 30,
         rotate: 0,
         opacity: 0,
