@@ -48,7 +48,7 @@ onMounted(() => {
     .from('.heading-level', {
         y: 50,
         opacity: 0,
-        duration: .7,
+        duration: .75,
         ease: 'power3.inOut',
     },'<')
     .from('.p-level', {
