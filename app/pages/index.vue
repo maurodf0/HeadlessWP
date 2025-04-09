@@ -14,8 +14,9 @@ function zeroPad(num: number, places: number): string {
 onMounted(() => {
   let obj = { value: 0 }
 
+  const navLinks = gsap.utils.toArray('nav a') as HTMLElement[];
     const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
-
+    const logoStack = gsap.utils.toArray('.logo-img-stack') as HTMLElement[];
 
   const tlOpener = gsap.timeline();
   tlOpener.to(obj, {
@@ -33,18 +34,11 @@ onMounted(() => {
     opacity: 0
   })
   .to('.app-loader', {
-    duration: 1,
+    duration: .5,
     ease: 'power3.inOut',
     transform: 'translateY(-120%)',
     rotate: 5,
   }, '<')
-    .to('.app-loader', {
-        duration: 1,
-        ease: 'power3.inOut',
-        opacity: 0,
-        display: 'none',
-        transform: 'translateY(-120%)',
-    }, '<')
        .from('.glow-effect', { 
         scale: .5,
         duration: .25,
@@ -54,7 +48,7 @@ onMounted(() => {
     .from('.heading-level', {
         y: 50,
         opacity: 0,
-        duration: 1,
+        duration: .7,
         ease: 'power3.inOut',
     },'<')
     .from('.p-level', {
@@ -97,7 +91,7 @@ onMounted(() => {
         y: 30,
         rotate: 0,
         opacity: 0,
-        duration: 1,
+        duration: .5,
         ease: 'power3.inOut',
         stagger: {
             amount: 1,
