@@ -47,7 +47,11 @@ onMounted(() => {
      duration: 1.25,
     ease: 'power3.inOut',
     transform: 'translateY(-100%)',
-  },'<')
+ onComplete: () => {
+    const wrapper = document.querySelector('.app-loader-wrapper')
+    if (wrapper) wrapper.remove()
+  }
+},'<')
        .from('.glow-effect', { 
         scale: .5,
         duration: .25,
