@@ -1,5 +1,5 @@
 <script setup lang="ts">
- const { data: posts } = await useFetch<any>(
+ const { data: posts, loading, error } = await useFetch<any>(
     'https://maurodefalco.it/wp-json/wp/v2/posts?_embed');
 </script>
 
@@ -11,6 +11,16 @@
         <template #description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </template>
     </PagesIntroContent>
+
+    <div v-if="loading" class="container max-w-[1080px] p-4 mx-auto">
+        Loading...
+    </div>
+
+    <div v-if="error" class="container max-w-[1080px] p-4 mx-auto">
+        Qualcosa è andato storto, per favore riprova più tardi.
+    </div>
+
+
  
     <div v-if="posts" class="container max-w-[1080px] p-4 mx-auto grid md:grid-cols-3 gap-8">
         <div v-for="post in posts" :key="post.id" class="card bg-gray-950 py-4 border border-opacity-45 border-neutral-700 px-4 rounded-lg" >
