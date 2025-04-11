@@ -46,7 +46,7 @@ const props = defineProps<{
                 </div>
                 <hr class="border-gray-700">
                 <div class="flex gap-4 mt-4">
-                    <NuxtLink :to="project.github" class="text-gray-400 hover:text-gray-200">
+                    <NuxtLink target="_blank" :to="project.github" class="text-gray-400 hover:text-gray-200">
                         <Icon name="ph:github-logo" class="w-6 h-6" />
                     </NuxtLink>
                     <NuxtLink target="_blank" :to="project.url" class="text-gray-400 hover:text-gray-200">
