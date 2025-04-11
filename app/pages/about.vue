@@ -6,7 +6,7 @@ const route = useRoute();
 </script>
 
 <template>
-<div class=" max-w-[1080px] mx-auto flex gap-2 items-center justify-center">
+<div class="max-w-[1080px] flex-col md:flex-row mx-auto flex gap-2 items-center justify-center">
     <PagesIntroContent>
         <template #title>{{ SingleAboutPage.title.rendered }}</template>
         <template #description>
