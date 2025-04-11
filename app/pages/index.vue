@@ -112,7 +112,7 @@ onMounted(() => {
         }
     })
     tl.to(items, {
-        xPercent: -300,
+        xPercent: -350,
         rotate: 25,
         ease: 'ease.inOut',
         stagger: {
@@ -143,7 +143,7 @@ const projects = [
         tech: ['Nuxt', 'Vue', 'Nuxt UI', 'PWA'],
         image: '/assets/AnimeTracker.png',
         url: 'https://anime-tracker-delta.vercel.app/',
-        github: 'https://github.com/maurodefalco/anime-tracker',
+        github: 'https://github.com/maurodf0/anime-tracker',
     },
     {
         id: 2,
@@ -204,7 +204,7 @@ const projects = [
     <div class="max-w-[880px] mx-auto projects-pin flex gap-4 relative min-h-[70vh] py-8 mt-[190px]">
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
-            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus libero cumque tempore laudantium iure labore quaerat nesciunt vel vitae nulla suscipit aliquam, alias totam quod quos eaque eius? Illum, veritatis!</p>
+            <p class="mt-4">Una lista di alcuni progetti realizzati da con le tecnologie e framework utilizzati. Naviga il codice su Github oppure scopri il sito/app live.</p>
                <NuxtLink to="/projects" class="primary">Discover All</NuxtLink>
         </div>
         <ProjectCard :projects="projects" />
