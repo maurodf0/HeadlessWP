@@ -34,23 +34,32 @@ onMounted(() => {
     opacity: 0
   })
   .to('.app-loader', {
-    duration: .5,
+    duration: 1,
     ease: 'power3.inOut',
-    transform: 'translateY(-120%)',
-    rotate: 5,
+    transform: 'translateY(-110%)',
   }, '<')
+  .to('.app-loader-1', {
+     duration: 1.55,
+    ease: 'power3.inOut',
+    transform: 'translateY(-100%)',
+  },'<')
+  .to('.app-loader-2', {
+     duration: 1.25,
+    ease: 'power3.inOut',
+    transform: 'translateY(-100%)',
+  },'<')
        .from('.glow-effect', { 
         scale: .5,
         duration: .25,
         ease: 'power3.inOut',
         opacity: 0,
-     }, '-=.15')
+     }, '<')
     .from('.heading-level', {
         y: 50,
         opacity: 0,
         duration: .75,
         ease: 'power3.inOut',
-    },'<')
+    },'-=.25')
     .from('.p-level', {
         y: 20,
         opacity: 0,
