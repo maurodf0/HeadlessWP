@@ -21,30 +21,30 @@ onMounted(() => {
   const tlOpener = gsap.timeline();
   tlOpener.to(obj, {
     value: 100,
-    duration: 3,
+    duration: 1.5,
     ease: 'power3.inOut',
     onUpdate: () => {
       loading.value = zeroPad(Math.round(obj.value), 3)
     },
   })
   .to('.logo-loader', {
-    duration: .5,
+    duration: .35,
     ease: 'power3.inOut',
     scale: .25,
     opacity: 0
   })
   .to('.app-loader', {
-    duration: 1,
+    duration: .75,
     ease: 'power3.inOut',
     transform: 'translateY(-110%)',
   }, '<')
   .to('.app-loader-1', {
-     duration: 1.55,
+     duration: 1.25,
     ease: 'power3.inOut',
     transform: 'translateY(-100%)',
   },'<')
   .to('.app-loader-2', {
-     duration: 1.25,
+     duration: 1.05,
     ease: 'power3.inOut',
     transform: 'translateY(-100%)',
  onComplete: () => {
@@ -85,7 +85,7 @@ onMounted(() => {
         rotate: 0,
         duration: .5,
         ease: 'power3.inOut',
-    })
+    }, '-=.5')
     .from('.logo-name', {
         xPercent: -50,
         rotate: 0,
@@ -111,7 +111,7 @@ onMounted(() => {
             from: 'start',
             ease: 'power3.inOut',
         },
-    })
+    }, '-=.5')
 
     const tl = gsap.timeline({
         scrollTrigger: {
