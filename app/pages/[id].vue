@@ -50,7 +50,7 @@ interface WpPost {
     <article class="!max-w-[880px] mx-auto prose !prose-invert p-4">
 
     <div class="image-container mx-auto">
-        <img :src="singlePost?._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image" class="mb-4 md:rounded-lg w-full object-cover"> 
+        <img v-if="singlePost?._embedded['wp:featuredmedia']" :src="singlePost?._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image" class="mb-4 md:rounded-lg w-full object-cover"> 
     </div>
 
     <div class="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 justify-between items-center mx-auto">
