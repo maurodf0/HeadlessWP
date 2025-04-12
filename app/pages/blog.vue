@@ -1,12 +1,29 @@
 <script setup lang="ts">
 
+interface WpPosts {
+    _embedded: {
+        'wp:featuredmedia': Array<{
+            source_url: string;
+        }>;
+    },
+    title: {
+        rendered: string;
+    },
+    excerpt: {
+        rendered: string;
+    }
+    slug: string;
+    id: number;
+    date: string;
+}
+
 // Dati di paginazione
 const currentPage = ref<number>(1);
 const perPage:number = 6;
 const totalPages = ref<number>(1);
 
 // Fetch post
-const { data: posts, pending: loading, error, refresh, execute } = await useFetch<any>(
+const { data: posts, pending: loading, error, refresh, execute } = await useFetch<WpPosts>(
   () => `https://maurodefalco.it/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage.value}`,
   {
     onResponse({ response }) {
@@ -27,7 +44,7 @@ function goToPage(page: number) {
 
 
 <template>
-  
+  <pre>{{ posts }}</pre>
     <PagesIntroContent>
         <template #title>Blog</template>
         <template #description>Articoli e guide su ciò che <em>amo fare.</em> Web Development, Vue, Nuxt, WordPress, UI/UX.</template>
@@ -55,6 +72,7 @@ function goToPage(page: number) {
                 <NuxtLink :to="post.slug"> 
                     <h2 class="text-xl font-medium mb-2 card-title">{{ post.title.rendered }}</h2>
                 </NuxtLink>
+                <p>{{ new Date(post?.date).toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' }) }} </p>
                 <!-- <p v-html="post.excerpt.rendered"class="mb-4 card-text"></p> -->
                 <a :href="post.slug" class="btn btn-primary">Leggi</a>
             </div>
