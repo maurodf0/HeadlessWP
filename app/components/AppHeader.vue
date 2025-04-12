@@ -65,3 +65,32 @@
         </nav>
     </header>
 </template>
+
+<style scoped>
+
+    .light-text {
+    font-weight: 600;
+      background: linear-gradient(
+        120deg,
+        #555 0%,
+        #aaa 40%,
+        #fff 50%,
+        #aaa 60%,
+        #555 100%
+      );
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: shine 5s linear infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 200% center;
+      }
+      100% {
+        background-position: -200% center;
+      }
+    }
+  </style>

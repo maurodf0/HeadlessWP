@@ -123,7 +123,7 @@ onMounted(() => {
             scrub: true,
             pin: true,
             pinSpacing: true,
-            markers: true,
+            //markers: true,
         }
     })
     tl.to(items, {
