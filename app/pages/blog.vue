@@ -44,7 +44,7 @@ function goToPage(page: number) {
 
 
 <template>
-  <pre>{{ posts }}</pre>
+
     <PagesIntroContent>
         <template #title>Blog</template>
         <template #description>Articoli e guide su ciò che <em>amo fare.</em> Web Development, Vue, Nuxt, WordPress, UI/UX.</template>
