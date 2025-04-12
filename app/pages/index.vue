@@ -152,7 +152,7 @@ const projects = [
     {
         id: 1,
         title: 'Anime Tracker',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'Anime Tracker è una web app in Vue, Nuxt e Tailwind CSS per tenere traccia degli anime visti o da vedere, con salvataggio dati in localStorage e gestione dello stato via composables.',
         tech: ['Nuxt', 'Vue', 'Nuxt UI', 'PWA'],
         image: '/assets/AnimeTracker.png',
         url: 'https://anime-tracker-delta.vercel.app/',
@@ -161,7 +161,7 @@ const projects = [
     {
         id: 2,
         title: 'Glide AI',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'Glide AI è una landing page moderna sviluppata con Nuxt in architettura headless tramite Prismic CMS, che sfrutta le librerie GSAP e Lenis per animazioni avanzate',
         tech: ['Nuxt', 'Vue', 'Prismic'],
         image: '/assets/glide-ai.webp',
         url: 'https://glide-ai-maurodf0.nuxt.dev/',
@@ -170,7 +170,7 @@ const projects = [
     {
         id: 3,
         title: 'Ringston',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'Ringston è una landing page interattiva realizzata con HTML, CSS e JavaScript, che sfrutta le librerie GSAP, SplitType e Three.js per animazioni avanzate e grafica 3D',
         tech: ['GSAP', 'Three.js', 'Lenis'],
         image: '/assets/ringston.webp',
         url: 'https://ringston-khaki.vercel.app/',
@@ -179,7 +179,7 @@ const projects = [
     {
         id: 4,
         title: 'Single User Content',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'WPSUC è un plugin WordPress che permette di creare contenuti privati visibili solo da un singolo utente registrato, tramite un custom post type.',
         tech: ['Php', 'WordPress'],
         image: '/assets/single-user-content.webp',
         url: 'https://it.wordpress.org/plugins/single-user-content/',
