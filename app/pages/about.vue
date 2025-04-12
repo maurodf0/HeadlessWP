@@ -1,11 +1,19 @@
 <script setup lang="ts">
 const route = useRoute();
 
- const { data: AboutPage } = await useFetch<any>(`https://maurodefalco.it/wp-json/wp/v2/pages?slug=about-me&_embed`);
+interface WpAboutPage {
+    id: number,
+    title: {rendered: string},
+    content: {rendered: string}
+}
+
+ const { data: AboutPage } = await useFetch<WpAboutPage>(`https://maurodefalco.it/wp-json/wp/v2/pages?slug=about-me&_embed`);
     const SingleAboutPage = AboutPage.value[0];
 </script>
 
 <template>
+
+    <pre>{{ SingleAboutPage }}</pre>
 <div class="max-w-[1080px] flex-col md:flex-row mx-auto flex gap-2 items-center justify-center">
     <PagesIntroContent>
         <template #title>{{ SingleAboutPage.title.rendered }}</template>
