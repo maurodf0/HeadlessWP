@@ -47,11 +47,12 @@
                 :class="isOpen ? 'translate-x-0' : 'translate-x-full'">
                 <button @click="isOpen = false" class="block p-2 text-3xl">
                     <Icon name="ph:x-bold" />
+
                 </button>
 
                 <ul class="grid justify-items-end gap-6">
                     <li v-for="link in links" :key="link.key">
-                        <NuxtLink :to="link.url" class="min-h-11 px-3 text-3xl first:mt-8 text-white"></NuxtLink>
+                        <NuxtLink :to="link.url" class="min-h-11 px-3 text-3xl first:mt-8 text-white">{{ link.label }}</NuxtLink>
                     </li>
                 </ul>
             </div>
