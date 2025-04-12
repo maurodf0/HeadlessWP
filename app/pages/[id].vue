@@ -25,10 +25,16 @@ interface WpPost {
     
     const route = useRoute();
     const slug = route.params.id as string;
-    const { data: singlePosts } = await useFetch<WpPost[]>(`https://maurodefalco.it/wp-json/wp/v2/posts?slug=${slug}&_embed`);  
+    const { data: singlePosts, loading, error } = await useFetch<WpPost[]>(`https://maurodefalco.it/wp-json/wp/v2/posts?slug=${slug}&_embed`);  
     
     const singlePost = singlePosts.value?.[0];
     const excerpt = singlePost?.excerpt.rendered;
+
+    useSeoMeta({
+      title: singlePost?.title.rendered,
+      description: singlePost?.excerpt.rendered,
+    }
+    )
 
 </script>
 
