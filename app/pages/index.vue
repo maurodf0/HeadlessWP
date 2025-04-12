@@ -12,6 +12,7 @@ function zeroPad(num: number, places: number): string {
 }
 
 onMounted(() => {
+  
   let obj = { value: 0 }
 
   const navLinks = gsap.utils.toArray('nav a') as HTMLElement[];
@@ -113,15 +114,16 @@ onMounted(() => {
         },
     }, '-=.5')
 
+    const isMobile:boolean = window.innerWidth < 768;
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.projects-pin',
-            start: 'top +=100px',
+            start: isMobile ? '+=230px top' : 'top +=100px',
             end: 'bottom top',
             scrub: true,
             pin: true,
             pinSpacing: true,
-            //  markers: true,
+            markers: true,
         }
     })
     tl.to(items, {

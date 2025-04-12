@@ -32,8 +32,8 @@
         <nav aria-label="Main"
             class="flex flex-col mx-auto max-w-6xl justify-between py-2 md:flex-row md:items-center md:justify-between">
             <div class="flex items-center justify-between">
-                <NuxtLink to="/" class="flex items-center z-50" @click="isOpen = false">
-                    <img src="/m-logo.png" alt="Logo" class="block invert logo w-20 h-20">
+                <NuxtLink to="/" class="flex items-center" @click="isOpen = false">
+                    <img src="/m-logo.png" alt="Logo" class="z-50 block invert logo w-20 h-20">
                     <div class="overflow-hidden">
                         <span class="block logo-name ml-2">Mauro De Falco</span>
                     </div>
