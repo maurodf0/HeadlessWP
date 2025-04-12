@@ -154,7 +154,7 @@ const projects = [
         title: 'Anime Tracker',
         description: 'Anime Tracker è una web app in Vue, Nuxt e Tailwind CSS per tenere traccia degli anime visti o da vedere, con salvataggio dati in localStorage e gestione dello stato via composables.',
         tech: ['Nuxt', 'Vue', 'Nuxt UI', 'PWA'],
-        image: '/assets/AnimeTracker.png',
+        image: '/AnimeTracker.png',
         url: 'https://anime-tracker-delta.vercel.app/',
         github: 'https://github.com/maurodf0/anime-tracker',
     },
@@ -163,7 +163,7 @@ const projects = [
         title: 'Glide AI',
         description: 'Glide AI è una landing page moderna sviluppata con Nuxt in architettura headless tramite Prismic CMS, che sfrutta le librerie GSAP e Lenis per animazioni avanzate',
         tech: ['Nuxt', 'Vue', 'Prismic'],
-        image: '/assets/glide-ai.webp',
+        image: '/glide-ai.webp',
         url: 'https://glide-ai-maurodf0.nuxt.dev/',
         github: 'https://github.com/maurodf0/glide-ai'
     },
@@ -172,7 +172,7 @@ const projects = [
         title: 'Ringston',
         description: 'Ringston è una landing page interattiva realizzata con HTML, CSS e JavaScript, che sfrutta le librerie GSAP, SplitType e Three.js per animazioni avanzate e grafica 3D',
         tech: ['GSAP', 'Three.js', 'Lenis'],
-        image: '/assets/ringston.webp',
+        image: '/ringston.webp',
         url: 'https://ringston-khaki.vercel.app/',
         github: 'https://github.com/maurodf0/ringston'
     },
@@ -181,7 +181,7 @@ const projects = [
         title: 'Single User Content',
         description: 'WPSUC è un plugin WordPress che permette di creare contenuti privati visibili solo da un singolo utente registrato, tramite un custom post type.',
         tech: ['Php', 'WordPress'],
-        image: '/assets/single-user-content.webp',
+        image: '/single-user-content.webp',
         url: 'https://it.wordpress.org/plugins/single-user-content/',
         github: 'https://github.com/maurodf0/wpsuc'
     },
