@@ -27,7 +27,7 @@ const props = defineProps<{
                     zIndex: projects.length - index,
 
                 }"
-                class="hover:border-sky-400/45 max-w-[480px] left-[0%] md:left-1/2  md:translate-x-0 mx-auto absolute transition-all projects-pin-item top-80 md:top-10 flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-100/15 bg-gray-950 rounded-lg shadow-lg duration-300 ease-in-out"
+                class="hover:border-sky-400/45 max-w-[90%] md:max-w-[480px] left-[0%] md:left-1/2  md:translate-x-0 mx-auto absolute transition-all projects-pin-item top-80 md:top-10 flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-100/15 bg-gray-950 rounded-lg shadow-lg duration-300 ease-in-out"
             >
             <NuxtLink :to="project.url">
                 <div class="mb-4 rounded-lg w-full h-48 bg-gray-800">
