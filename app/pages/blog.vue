@@ -1,6 +1,28 @@
 <script setup lang="ts">
- const { data: posts, loading, error } = await useFetch<any>(
-    'https://maurodefalco.it/wp-json/wp/v2/posts?_embed');
+
+// Dati di paginazione
+const currentPage = ref<number>(1);
+const perPage:number = 6;
+const totalPages = ref<number>(1);
+
+// Fetch post
+const { data: posts, pending: loading, error, refresh, execute } = await useFetch<any>(
+  () => `https://maurodefalco.it/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage.value}`,
+  {
+    onResponse({ response }) {
+      const total = response.headers.get('x-wp-totalpages');
+      if (total) {
+        totalPages.value = parseInt(total, 10);
+      }
+    }
+  }
+);
+
+function goToPage(page: number) {
+  if (page >= 1 && page <= totalPages.value) {
+    currentPage.value = page;
+  }
+}
 </script>
 
 
@@ -8,8 +30,7 @@
   
     <PagesIntroContent>
         <template #title>Blog</template>
-        <template #description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </template>
+        <template #description>Articoli e guide su ciò che <em>amo fare.</em> Web Development, Vue, Nuxt, WordPress, UI/UX.</template>
     </PagesIntroContent>
 
     <div v-if="loading" class="container max-w-[1080px] p-4 mx-auto">
@@ -34,9 +55,40 @@
                 <NuxtLink :to="post.slug"> 
                     <h2 class="text-xl font-medium mb-2 card-title">{{ post.title.rendered }}</h2>
                 </NuxtLink>
-                <p v-html="post.excerpt.rendered"class="mb-4 card-text"></p>
-                <a :href="post.slug" class="btn btn-primary">Read more</a>
+                <!-- <p v-html="post.excerpt.rendered"class="mb-4 card-text"></p> -->
+                <a :href="post.slug" class="btn btn-primary">Leggi</a>
             </div>
         </div>
+        
     </div>
+<div class="container max-w-[1080px] p-4 mx-auto mt-8 flex justify-center items-center gap-2" v-if="posts?.length">
+  <button
+    @click="goToPage(currentPage - 1)"
+    :disabled="currentPage === 1"
+    class="px-3 py-2 border rounded disabled:opacity-50"
+  >
+    ←
+  </button>
+
+  <template v-for="page in totalPages" :key="page">
+    <a
+      @click="goToPage(page)"
+      :class="[
+        'px-3 rounded cursor-pointer',
+        page === currentPage ? 'bg-sky-600 text-white' : 'hover:bg-gray-700'
+      ]"
+    >
+      {{ page }}
+  </a>
+  </template>
+
+  <button
+    @click="goToPage(currentPage + 1)"
+    :disabled="currentPage === totalPages"
+    class="px-3 py-2 border rounded disabled:opacity-50"
+  >
+    →
+  </button>
+</div>
+
 </template>
