@@ -7,7 +7,7 @@ interface WpAboutPage {
     content: {rendered: string}
 }
 
- const { data: AboutPage } = await useFetch<WpAboutPage>(`${useRuntimeConfig().public.wpApiUrl}/wp/v2/pages?slug=about-me&_embed`);
+ const { data: AboutPage } = await useFetch<WpAboutPage>(`https://maurodefalco.it/wp-json/wp/v2/pages?slug=about-me&_embed`);
     const SingleAboutPage = AboutPage.value[0];
 </script>
 

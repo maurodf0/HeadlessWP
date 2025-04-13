@@ -2,7 +2,7 @@
     const route = useRoute();
     const slug = route.params.id;
 
-    const { data: singleCategoryData } = await useFetch<any>(`${useRuntimeConfig().public.wpApiUrl}/wp/v2/categories?slug=${slug}&_embed`);
+    const { data: singleCategoryData } = await useFetch<any>(`https://maurodefalco.it/wp-json/wp/v2/categories?slug=${slug}&_embed`);
     const singleCategory = singleCategoryData.value[0];
 </script>
 

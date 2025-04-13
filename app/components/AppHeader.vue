@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    const { data } = await useFetch(`${useRuntimeConfig().public.wpApiUrl}`);
+    const { data } = await useFetch('https://maurodefalco.it/wp-json/');
 
     const isOpen = ref(false);
     const links = [

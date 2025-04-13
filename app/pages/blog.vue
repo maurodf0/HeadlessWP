@@ -24,7 +24,7 @@ const totalPages = ref<number>(1);
 
 // Fetch post
 const { data: posts, pending: loading, error, refresh, execute } = await useFetch<WpPosts>(
-  () => `${useRuntimeConfig().public.wpApiUrl}/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage.value}`,
+  () => `https://maurodefalco.it/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage.value}`,
   {
     onResponse({ response }) {
       const total = response.headers.get('x-wp-totalpages');
