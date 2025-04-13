@@ -183,7 +183,7 @@ const projects = [
         title: 'Single User Content',
         description: 'WPSUC è un plugin WordPress che permette di creare contenuti privati visibili solo da un singolo utente registrato, tramite un custom post type.',
         tech: ['Php', 'WordPress'],
-        image: '/single-user-content.webp',
+        image: '/SingleUserContentPlugin.webp',
         url: 'https://it.wordpress.org/plugins/single-user-content/',
         github: 'https://github.com/maurodf0/wpsuc'
     },
