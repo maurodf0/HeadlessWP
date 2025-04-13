@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    runtimeConfig: {
+    public: {
+      wpApiUrl: process.env.WP_API_URL
+    }
+  },
   future: {
     compatibilityVersion: 4,
   },

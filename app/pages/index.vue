@@ -145,7 +145,7 @@ onMounted(() => {
 
 })
 
-const { data } = await useFetch<{ description?: string }>('https://maurodefalco.it/wp-json/', {
+const { data } = await useFetch<{ description?: string }>(`${useRuntimeConfig().public.wpApiUrl}`, {
     method: 'GET',
 
 });
