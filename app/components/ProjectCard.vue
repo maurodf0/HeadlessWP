@@ -9,7 +9,7 @@ interface Project {
     github?: string;
 }
 
-const props = defineProps<{
+const { projects } = defineProps<{
   projects: Project[]
 }>();
 </script>
@@ -20,18 +20,18 @@ const props = defineProps<{
         </div>
 
             <div 
-                v-for="(project, index) in props.projects" 
+                v-for="(project, index) in projects" 
                 :key="project.id"
                 :style="{
                     transform: `translate(${index * +10}px, ${index * -10}px)`,
                     zIndex: projects.length - index,
 
                 }"
-                class="hover:border-sky-400/45 max-w-[90%] md:max-w-[480px] left-[0%] md:left-1/2  md:translate-x-0 mx-auto absolute transition-all projects-pin-item top-80 md:top-10 flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-100/15 bg-gray-950 rounded-lg shadow-lg duration-300 ease-in-out"
+                class="hover:border-sky-400/45 max-w-[90%] md:max-w-[480px] left-[0%] md:left-1/2  md:translate-x-0 mx-auto absolute transition-all projects-pin-item top-96 md:top-10 flex flex-col gap-4 w-full p-6 text-wrapper border-4 border-gray-100/15 bg-gray-950 rounded-lg shadow-lg duration-300 ease-in-out"
             >
             <NuxtLink target="_blank" :to="project.url" class="flex flex-col gap-2">
-                <div class="mb-4 rounded-lg w-full h-48 bg-gray-800">
-                    <img :src="project.image" alt="Project Image" class="w-full h-full object-cover rounded-lg">
+                <div class="hidden md:block mb-4 rounded-lg w-full h-48 bg-gray-800">
+                    <img :src="project.image" alt="Project Image" class=" w-full h-full object-cover rounded-lg">
                 </div>
             </NuxtLink>
                 <h2 class="text-2xl font-medium">{{ project.title }}</h2>

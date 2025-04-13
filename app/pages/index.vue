@@ -118,8 +118,8 @@ onMounted(() => {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.projects-pin',
-            start: isMobile ? '+=230px top' : 'top +=100px',
-            end: 'bottom top',
+            start: isMobile ? '+=270px top' : 'top +=100px',
+            end: 'bottom -=180px',
             scrub: true,
             pin: true,
             pinSpacing: true,
@@ -216,7 +216,7 @@ const projects = [
     </div>
     <PagesLogoCarousel />
 
-    <div class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[70vh] py-8 mt-[60px] md:mt-[190px]">
+    <div class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[75vh] md:min-h-[70vh] py-8 mt-[60px] md:mt-[190px]">
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
             <p class="mt-4">Una lista di alcuni progetti realizzati da con le tecnologie e framework utilizzati. Naviga il codice su Github oppure scopri il sito/app live.</p>
