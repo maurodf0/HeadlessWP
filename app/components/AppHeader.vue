@@ -2,6 +2,7 @@
     const { data } = await useFetch('https://maurodefalco.it/wp-json/');
 
     const isOpen = ref(false);
+
     const links = [
     {
         key: 'about',
@@ -38,21 +39,30 @@
                         <span class="block logo-name ml-2">Mauro De Falco</span>
                     </div>
                 </NuxtLink>
-                <button class="block md:hidden p-2 text-3xl" :aria-expanded="isOpen" @click="isOpen = true">
-                    <Icon name="ph:list-bold" />
-                </button>
+                        <button
+                        type="button"
+                        class="block md:hidden p-2 text-3xl text-white"
+                        :aria-expanded="isOpen"
+                        @click="isOpen = true"
+                     >
+                     <Icon name="ph:list-bold" />
+                     </button>
             </div>
 
             <div class="md:hidden fixed inset-0 z-40 flex flex-col items-end bg-gray-950 pr-4 pt-6 transition-transform duration-300 ease-in-out will-change-transform"
                 :class="isOpen ? 'translate-x-0' : 'translate-x-full'">
-                <button @click="isOpen = false" class="block p-2 text-3xl">
-                    <Icon name="ph:x-bold" />
-
+                <button
+                :aria-expanded="isOpen"
+                type="button"
+                class="block md:hidden p-2 text-3xl text-white"
+                @click="isOpen = false"
+                >
+                <Icon name="ph:x-bold" />
                 </button>
 
                 <ul class="grid justify-items-end gap-6">
                     <li v-for="link in links" :key="link.key">
-                        <NuxtLink :to="link.url" class="min-h-11 px-3 text-3xl first:mt-8 text-white">{{ link.label }}</NuxtLink>
+                        <NuxtLink @click="isOpen = false" :to="link.url" class="min-h-11 px-3 text-3xl first:mt-8 text-white">{{ link.label }}</NuxtLink>
                     </li>
                 </ul>
             </div>
@@ -66,31 +76,3 @@
     </header>
 </template>
 
-<style scoped>
-
-    .light-text {
-    font-weight: 600;
-      background: linear-gradient(
-        120deg,
-        #555 0%,
-        #aaa 40%,
-        #fff 50%,
-        #aaa 60%,
-        #555 100%
-      );
-      background-size: 200% auto;
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      animation: shine 5s linear infinite;
-    }
-
-    @keyframes shine {
-      0% {
-        background-position: 200% center;
-      }
-      100% {
-        background-position: -200% center;
-      }
-    }
-  </style>
