@@ -189,6 +189,30 @@ const projects = [
     },
 ]
 
+const services = [
+    {
+        id: 1,
+        title: 'Creative Developer',
+        description: 'Realizzo siti e app web ad alto impatto visivo e funzionale, con una forte attenzione ai dettagli visivi e al design.',
+    },
+    {
+        id: 2,
+        title: 'Ecommerce Developer',
+        description: 'Dai un boost alle tue vendite con un\'eperienza ecommerce personalizzata per il tuo brand e i tuoi prodotti.',
+    },
+    {
+        id: 3,
+        title: 'UI/UX Designer',
+        description: 'Realizzo esperienze di design e interazione utente intuitive e coinvolgenti, con una forte attenzione ai dettagli visivi e al design.',
+
+    },
+    {
+        id: 4,
+        title: 'SEO Specialist',
+        description: 'Il tuo business non è online se non si fa trovare, portiamo il tuo brand online con un approccio SEO ottimizzato.',
+    },
+]
+
 
 </script>
 
@@ -225,7 +249,12 @@ const projects = [
         <ProjectCard :projects="projects" />
     </div>
 
-   <PagesLogoCarousel class="mt-16" />
 
+   <div class="services-container max-w-[1080px] mx-auto mt-16">
+    <h2 class="text-2xl md:text-3xl font-medium">Services</h2>
+        <div class="grid grid-cols-3 gap-8 mt-8">
+            <ServicesCard :services="services" />
+    </div>
+    </div>
 
 </template>
