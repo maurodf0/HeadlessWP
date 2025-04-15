@@ -9,20 +9,24 @@
     const { services } = defineProps<{
         services: Service[];
     }>();
+
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+
 </script>
 
 <template>
   
 <div v-for="service in services" :key="service.id" 
-     class="services-card animated-border flex flex-col gap-8 p-4 md:p-8 rounded-lg bg-gray-950 shadow-md ">
-       
-  <div class="max-w-md rounded-3xl p-px bg-gradient-to-b dark:from-blue-800 dark:to-purple-800 "></div>
-  <div class="flex flex-col justify-between">
-    <div class="flex flex-col gap-2">
-      <h4 class="font-medium">{{ service.title }}</h4>
+class="services-card flex flex-col gap-8 p-4 md:p-8 rounded-lg bg-gray-950 hover:scale-105 hover:rotate-3 transition-all hover:border hover:border-sky-400" >
+
+    <div class="flex flex-col justify-between">
+        <h4 class="font-medium mb-4">{{ service.title }}</h4>
+      <span class="text-gray-400">{{ service.description }}</span>
     </div>
-    <span class="text-gray-400">{{ service.description }}</span>
   </div>
-</div>
+
 
 </template>
