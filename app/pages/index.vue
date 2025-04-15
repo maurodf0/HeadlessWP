@@ -250,9 +250,9 @@ const services = [
     </div>
 
 
-   <div class="services-container max-w-[1080px] mx-auto mt-16">
-    <h2 class="text-2xl md:text-3xl font-medium">Services</h2>
-        <div class="grid grid-cols-3 gap-8 mt-8">
+   <div class="services-container max-w-[1080px] mx-auto mt-72 md:mt-16">
+    <h2 class="text-2xl md:text-3xl font-medium px-4">Services</h2>
+        <div class="grid md:grid-cols-3 gap-8 px-4 md:px-0 mt-8">
             <ServicesCard :services="services" />
     </div>
     </div>
