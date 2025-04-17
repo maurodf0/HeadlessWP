@@ -126,23 +126,58 @@ onMounted(() => {
             //markers: true,
         }
     })
-    tl.to(items, {
-        xPercent: -350,
+    tl.to(items[0], {
+        xPercent: -200,
+        opacity: 1,
         rotate: 25,
         ease: 'ease.inOut',
-        stagger: {
-        each: 2,
-        ease: 'power1.inOut',
-        },
     })
-    if(items[3]) {
-        tl.to(items[3], {
-            rotate: 0,
-            xPercent: 0,
-            ease: 'power2.inOut',
-        })
-    }
-
+    tl.to(items[0], {
+        xPercent: -0,
+        opacity: 1,
+        zIndex: -10 , 
+        rotate: 0,
+        ease: 'ease.inOut',     
+    })
+    tl.to(items[1], {
+        xPercent: -200,
+        opacity: 1,
+        rotate: 25,
+        ease: 'ease.inOut',
+    })
+    tl.to(items[1], {
+        xPercent: -0,
+        opacity: 1,
+        zIndex: -15, 
+        rotate: 0,
+        ease: 'ease.inOut',     
+    })
+    tl.to(items[2], {
+        xPercent: -200,
+        opacity: 1,
+        rotate: 25,
+        ease: 'ease.inOut',
+    })
+    tl.to(items[2], {
+        xPercent: -0,
+        opacity: 1,
+        zIndex: -20, 
+        rotate: 0,
+        ease: 'ease.inOut',     
+    })
+    tl.to(items[3], {
+        xPercent: -200,
+        opacity: 1,
+        rotate: 25,
+        ease: 'ease.inOut',
+    })
+    tl.to(items[3], {
+        xPercent: -0,
+        opacity: 1,
+        zIndex: -25, 
+        rotate: 0,
+        ease: 'ease.inOut',     
+    })
 })
 
 const { data } = await useFetch<{ description?: string }>('https://maurodefalco.it/wp-json/', {
