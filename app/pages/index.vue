@@ -108,7 +108,7 @@ onMounted(() => {
         duration: .5,
         ease: 'power3.inOut',
         stagger: {
-            amount: 1,
+            amount: .75,
             from: 'start',
             ease: 'power3.inOut',
         },
