@@ -127,7 +127,7 @@ onMounted(() => {
         }
     })
     tl.to(items[0], {
-        xPercent: -200,
+        xPercent: -150,
         opacity: 1,
         rotate: 25,
         ease: 'ease.inOut',
@@ -135,25 +135,28 @@ onMounted(() => {
     tl.to(items[0], {
         xPercent: -0,
         opacity: 1,
-        zIndex: -10 , 
+        zIndex: -10, 
+        transform: `translate(+0px, -0px)`,
         rotate: 0,
         ease: 'ease.inOut',     
     })
     tl.to(items[1], {
-        xPercent: -200,
+        xPercent: -150,
         opacity: 1,
         rotate: 25,
+        
         ease: 'ease.inOut',
     })
     tl.to(items[1], {
         xPercent: -0,
         opacity: 1,
         zIndex: -15, 
+        transform: `translate(+10px, -10px)`,
         rotate: 0,
         ease: 'ease.inOut',     
     })
     tl.to(items[2], {
-        xPercent: -200,
+        xPercent: -150,
         opacity: 1,
         rotate: 25,
         ease: 'ease.inOut',
@@ -162,11 +165,12 @@ onMounted(() => {
         xPercent: -0,
         opacity: 1,
         zIndex: -20, 
+        transform: `translate(+20px, -20px)`,
         rotate: 0,
         ease: 'ease.inOut',     
     })
     tl.to(items[3], {
-        xPercent: -200,
+        xPercent: -150,
         opacity: 1,
         rotate: 25,
         ease: 'ease.inOut',
@@ -174,10 +178,13 @@ onMounted(() => {
     tl.to(items[3], {
         xPercent: -0,
         opacity: 1,
-        zIndex: -25, 
+        zIndex: -30, 
+        transform: `translate(+30px, -30px)`,
         rotate: 0,
         ease: 'ease.inOut',     
     })
+
+
 })
 
 const { data } = await useFetch<{ description?: string }>('https://maurodefalco.it/wp-json/', {
@@ -275,7 +282,7 @@ const services = [
     </div>
     <PagesLogoCarousel />
 
-    <div class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[75vh] md:min-h-[70vh] py-8 mt-[60px] md:mt-[190px]">
+    <div class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[85vh] md:min-h-[100vh] py-8 mt-[60px] md:mt-[190px]">
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
             <p class="mt-4">Una lista di alcuni progetti realizzati da con le tecnologie e framework utilizzati. Naviga il codice su Github oppure scopri il sito/app live.</p>
