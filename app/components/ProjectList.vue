@@ -7,14 +7,10 @@ const { error, pending, data: repos } = await useFetch('https://api.github.com/u
 //display only repo with description and sorted by updated_at date
 const reposWithDescription = computed(() => repos.value.filter(repo => repo.description).sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)))
 
-console.log(error)
+
 </script>
 
 <template>
-
-<pre>  
-  {{ repos }}
-  </pre>
 
   <div class="">
     <section v-if="pending">Loading...</section>
