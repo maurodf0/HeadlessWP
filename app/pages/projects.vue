@@ -1,8 +1,7 @@
 <template>
     <PagesIntroContent>
         <template #title>Github Projects</template>
-        <template #description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </template>
+        <template #description>Progetti personali, open source o semplicemente passione e studio, alcuni dei miei progetti che mi permettono di ampliarmi professionalemnte giorno dopo giorno.</template>
     </PagesIntroContent>
 
 
