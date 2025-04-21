@@ -1,14 +1,20 @@
 <script setup>
 const { error, pending, data: repos } = await useFetch('https://api.github.com/users/maurodf0/repos');
-//display only repo with description and sorted by stars number
-const reposWithDescription = computed(() => repos.value.filter(repo => repo.description).sort((a, b) => b.stargazers_count - a.stargazers_count))
+//display only repo with description and sorted by updated_at date
+const reposWithDescription = computed(() => repos.value.filter(repo => repo.description).sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)))
 
+console.log(error)
 </script>
 
 <template>
+
+<pre>  
+  {{ repos }}
+  </pre>
+
   <div class="">
     <section v-if="pending">Loading...</section>
-    <section v-else-if="error">Something went wrong, try again...</section>
+    <section v-else-if="error">Something went wrong, try again... <br> {{ error }}</section>
     <section v-else>
       <ul class="grid grid-cols-1 gap-4">
         <li v-for="repo in reposWithDescription"
