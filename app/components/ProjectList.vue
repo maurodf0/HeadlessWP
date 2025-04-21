@@ -20,9 +20,9 @@ console.log(error)
     <section v-if="pending">Loading...</section>
     <section v-else-if="error">Something went wrong, try again... <br> {{ error }}</section>
     <section v-else>
-      <ul class="grid grid-cols-1 gap-4">
+      <ul class="grid grid-cols-2 gap-4">
         <li v-for="repo in reposWithDescription"
-          class="border border-gray-200 dark:border-gray-700 rounded-sm p-4 hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="flex flex-col gap-8 p-4 md:p-8 rounded-lg bg-gray-950 hover:scale-105 border-2 border-gray-900 hover:rotate-3 transition-all hover:border hover:border-sky-400 relative"
           :key="repo.id">
           <a :href="repo.html_url" target="_blank">
             <div class="flex items-center justify-between text-sm">
@@ -30,6 +30,12 @@ console.log(error)
             
             </div>
             <p class="text-sm mb-0" >{{ repo.description }}</p>
+            <div class="language">
+              <span class="inline-block mr-4 mt-2 text-sm">#{{ repo.language }}</span>
+            </div>
+            <div class="topics">
+              <span v-for="topic in repo.topics" :key="topic" class="inline-block mr-4 mt-2 text-sm">#{{ topic }}</span>
+            </div>
           </a>
         </li>
       </ul>
