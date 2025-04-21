@@ -16,7 +16,7 @@ const reposWithDescription = computed(() => repos.value.filter(repo => repo.desc
     <section v-if="pending">Loading...</section>
     <section v-else-if="error">Something went wrong, try again... <br> {{ error }}</section>
     <section v-else>
-      <ul class="grid grid-cols-2 gap-4">
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <li v-for="repo in reposWithDescription"
           class="flex flex-col gap-8 p-4 md:p-8 rounded-lg bg-gray-950 hover:scale-105 border-2 border-gray-900 hover:rotate-3 transition-all hover:border hover:border-sky-400 relative"
           :key="repo.id">
