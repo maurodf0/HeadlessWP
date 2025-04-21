@@ -1,7 +1,8 @@
 <template>
     <PagesIntroContent>
         <template #title>Github Projects</template>
-        <template #description>Progetti personali, open source o semplicemente passione e studio, alcuni dei miei progetti che mi permettono di ampliarmi professionalemnte giorno dopo giorno.</template>
+        <template #description>Una raccolta di progetti realizzati per passione, curiosità e desiderio di crescita continua. Ogni progetto nasce dalla voglia di sperimentare, imparare e migliorare le mie competenze giorno dopo giorno.
+</template>
     </PagesIntroContent>
 
 
