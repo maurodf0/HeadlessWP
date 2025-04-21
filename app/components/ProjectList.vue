@@ -1,5 +1,9 @@
 <script setup>
-const { error, pending, data: repos } = await useFetch('https://api.github.com/users/maurodf0/repos');
+const { error, pending, data: repos } = await useFetch('https://api.github.com/users/maurodf0/repos', {
+    headers: {
+    'User-Agent': 'HeadlessWP'
+  }
+});
 //display only repo with description and sorted by updated_at date
 const reposWithDescription = computed(() => repos.value.filter(repo => repo.description).sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)))
 
