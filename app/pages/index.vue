@@ -282,7 +282,8 @@ const services: Array<SingleService> = [
     </div>
 
 
-   <div class="services-container max-w-[1080px] mx-auto mt-72 md:mt-16">
+   <div class="services-container max-w-[1080px] mx-auto mt-72 md:mt-16 relative">
+     <div class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-1/2  h-[120px] filter blur-[160px] absolute  -z-10 top-16 left-3/3 md:left-1/3"></div>
     <h2 class="text-2xl md:text-3xl font-medium px-4">Servizi</h2>
         <div class="grid md:grid-cols-3 gap-8 px-4 md:px-0 mt-8">
             <ServicesCard :services="services" />
