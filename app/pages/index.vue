@@ -267,7 +267,7 @@ const services: Array<SingleService> = [
         </div>
         <div class="flex justify-center mt-4 gap-8 mx-auto align-center w-100">
             <NuxtLink to="/about" class="primary cta-link">About</NuxtLink>
-            <NuxtLink to="/contact" class="onlyLink cta-link">Contact</NuxtLink>
+            <NuxtLink to="#contact" class="onlyLink cta-link">Contact</NuxtLink>
         </div>
     </div>
     <PagesLogoCarousel />
