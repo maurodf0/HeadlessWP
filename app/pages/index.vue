@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const loading = ref('000') // inizializza come stringa padded
+const loading = ref('000') 
 
 function zeroPad(num: number, places: number): string {
   return String(num).padStart(places, '0')
@@ -262,7 +262,7 @@ const services: Array<SingleService> = [
         </div>
         <div class="flex justify-center mt-4 gap-8 mx-auto align-center w-100">
             <NuxtLink to="/about" class="primary cta-link">About</NuxtLink>
-            <NuxtLink to="/contact" class="onlyLink cta-link">Contact</NuxtLink>
+            
         </div>
     </div>
     <PagesLogoCarousel />
@@ -270,7 +270,7 @@ const services: Array<SingleService> = [
     <div class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[85vh] md:min-h-[100vh] py-8 mt-[60px] md:mt-[190px]">
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
-            <p class="mt-4">Una lista di alcuni progetti realizzati da con le tecnologie e framework utilizzati. Naviga il codice su Github oppure scopri il sito/app live.</p>
+            <p class="mt-4">Una lista di alcuni progetti realizzati con le tecnologie e framework che più amo. Naviga il codice su Github oppure scopri il sito/app live.</p>
                <NuxtLink to="/projects" class="primary">Discover All</NuxtLink>
         </div>
         <ProjectCard :projects="projects" />
