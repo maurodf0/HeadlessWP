@@ -1,9 +1,9 @@
 <script setup lang="ts">
     interface Service {
       id: number;
+      icon: string;
       title: string;
       description: string;
-
     }
 
     const { services } = defineProps<{
@@ -25,6 +25,9 @@ class="services-card flex flex-col gap-8 p-4 md:p-8 rounded-lg bg-gray-950 hover
 <div class="absolute inset-0 z-20 bg-[radial-gradient(40%_128px_at_50%_0%,theme(backgroundColor.white/5%),transparent)]"></div>
 
     <div class="flex flex-col justify-between">
+      <Icon class="mb-2" relative :name="service.icon" size="xl" />
+       <div class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-1/2  h-[120px] filter blur-[160px] absolute mix-blend-screen -z-10 top-16 left-3/3 md:left-1/3"></div>
+         
         <h4 class="font-medium mb-4">{{ service.title }}</h4>
       <span class="text-gray-400">{{ service.description }}</span>
     </div>

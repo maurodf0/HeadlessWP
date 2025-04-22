@@ -131,7 +131,7 @@ const tl = gsap.timeline({
 items.forEach((item, index) => {
   tl.to(item, {
     xPercent: -100,
-    z: 100,
+
     opacity: 1,
     rotate: 25,
     ease: 'none',
@@ -139,7 +139,7 @@ items.forEach((item, index) => {
 
   tl.to(item, {
     xPercent: 0,
-    z: 0,
+
     opacity: 1,
     zIndex: -10 * (index + 1),
     transform: `translate(${10 * index}px, ${-10 * index}px)`,
@@ -157,7 +157,17 @@ const { data } = await useFetch<{ description?: string }>('https://maurodefalco.
 
 });
 
-const projects = [
+interface SingleProject {
+    id: number;
+    title: string;
+    description: string;
+    tech: string[];
+    image?: string;
+    url?: string;
+    github?: string;
+}
+
+const projects: Array<SingleProject> = [
     {
         id: 1,
         title: 'Anime Tracker',
@@ -171,7 +181,7 @@ const projects = [
         id: 2,
         title: 'Glide AI',
         description: 'Glide AI è una landing page moderna sviluppata con Nuxt in architettura headless tramite Prismic CMS, che sfrutta le librerie GSAP e Lenis per animazioni avanzate',
-        tech: ['Nuxt', 'Vue', 'Prismic'],
+        tech: ['Nuxt', 'Vue', 'Prismic', 'GSAP', 'Lenis'],
         image: '/glide-ai.webp',
         url: 'https://glide-ai-maurodf0.nuxt.dev/',
         github: 'https://github.com/maurodf0/glide-ai'
@@ -196,25 +206,35 @@ const projects = [
     },
 ]
 
-const services = [
+interface SingleService {
+    id: number;
+    icon: string;
+    title: string;
+    description: string;
+}
+const services: Array<SingleService> = [
     {
         id: 1,
+        icon: 'material-symbols-developer-mode-tv',
         title: 'Creative Developer',
         description: 'Realizzo siti e app web ad alto impatto visivo e funzionale, con una forte attenzione ai dettagli visivi e al design.',
     },
     {
         id: 2,
+        icon: 'material-symbols-shopping-bag-speed',
         title: 'Ecommerce Developer',
         description: 'Dai un boost alle tue vendite con un\'eperienza ecommerce personalizzata per il tuo brand e i tuoi prodotti.',
     },
     {
         id: 3,
+        icon: 'ri-figma-fill',
         title: 'UI/UX Designer',
         description: 'Realizzo esperienze di design e interazione utente intuitive e coinvolgenti, con una forte attenzione ai dettagli visivi e al design.',
 
     },
     {
         id: 4,
+        icon: 'ri-seo-fill',
         title: 'SEO Specialist',
         description: 'Il tuo business non è online se non si fa trovare, portiamo il tuo brand online con un approccio SEO ottimizzato.',
     },
