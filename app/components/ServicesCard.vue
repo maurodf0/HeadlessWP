@@ -19,9 +19,9 @@
  const services = gsap.utils.toArray('.services-card') as HTMLElement[];
             const ServiceTl = gsap.timeline({
             scrollTrigger: {
-                trigger: services[0],
-                start: 'top center',
-                end: 'bottom bottom',
+                trigger: '.services-container',
+                start: '-=500px top',
+                end: '500px bottom',
                 scrub: 1,
                 markers : true,
             }
@@ -33,7 +33,6 @@
                 opacity: 0,
                 duration: 1,
                 y: 100,
-                z: 300,
                 ease: 'power3.inOut',
                 stagger: {
                     amount: 0.2,
