@@ -114,75 +114,40 @@ onMounted(() => {
         },
     }, '-=.5')
 
-    const isMobile:boolean = window.innerWidth < 768;
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.projects-pin',
-            start: isMobile ? '+=270px top' : 'top +=100px',
-            end: 'bottom -=180px',
-            scrub: true,
-            pin: true,
-            pinSpacing: true,
-            //markers: true,
-        }
-    })
-    tl.to(items[0], {
-        xPercent: -150,
-        opacity: 1,
-        rotate: 25,
-        ease: 'ease.inOut',
-    })
-    tl.to(items[0], {
-        xPercent: -0,
-        opacity: 1,
-        zIndex: -10, 
-        transform: `translate(+0px, -0px)`,
-        rotate: 0,
-        ease: 'ease.inOut',     
-    })
-    tl.to(items[1], {
-        xPercent: -150,
-        opacity: 1,
-        rotate: 25,
-        
-        ease: 'ease.inOut',
-    })
-    tl.to(items[1], {
-        xPercent: -0,
-        opacity: 1,
-        zIndex: -15, 
-        transform: `translate(+10px, -10px)`,
-        rotate: 0,
-        ease: 'ease.inOut',     
-    })
-    tl.to(items[2], {
-        xPercent: -150,
-        opacity: 1,
-        rotate: 25,
-        ease: 'ease.inOut',
-    })
-    tl.to(items[2], {
-        xPercent: -0,
-        opacity: 1,
-        zIndex: -20, 
-        transform: `translate(+20px, -20px)`,
-        rotate: 0,
-        ease: 'ease.inOut',     
-    })
-    tl.to(items[3], {
-        xPercent: -150,
-        opacity: 1,
-        rotate: 25,
-        ease: 'ease.inOut',
-    })
-    tl.to(items[3], {
-        xPercent: -0,
-        opacity: 1,
-        zIndex: -30, 
-        transform: `translate(+30px, -30px)`,
-        rotate: 0,
-        ease: 'ease.inOut',     
-    })
+  const isMobile: boolean = window.innerWidth < 768;
+
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.projects-pin',
+    start: isMobile ? '+=270px top' : 'top +=100px',
+    end: `+=${items.length * 400}`,
+    scrub: 1,
+    pin: true,
+    pinSpacing: true,
+    // markers: true,
+  }
+});
+
+items.forEach((item, index) => {
+  tl.to(item, {
+    xPercent: -100,
+    z: 100,
+    opacity: 1,
+    rotate: 25,
+    ease: 'none',
+  });
+
+  tl.to(item, {
+    xPercent: 0,
+    z: 0,
+    opacity: 1,
+    zIndex: -10 * (index + 1),
+    transform: `translate(${10 * index}px, ${-10 * index}px)`,
+    rotate: 0,
+    ease: 'none',
+  });
+});
+
 
 
 })
