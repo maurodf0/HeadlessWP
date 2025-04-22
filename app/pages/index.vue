@@ -276,14 +276,14 @@ const services: Array<SingleService> = [
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
             <p class="mt-4">Una lista di alcuni progetti realizzati con le tecnologie e framework che più amo. Naviga il codice su Github oppure scopri il sito/app live.</p>
-               <NuxtLink to="/projects" class="primary">Discover All</NuxtLink>
+               <NuxtLink to="/projects" class="primary">Scopri i progetti</NuxtLink>
         </div>
         <ProjectCard :projects="projects" />
     </div>
 
 
    <div class="services-container max-w-[1080px] mx-auto mt-72 md:mt-16">
-    <h2 class="text-2xl md:text-3xl font-medium px-4">Services</h2>
+    <h2 class="text-2xl md:text-3xl font-medium px-4">Servizi</h2>
         <div class="grid md:grid-cols-3 gap-8 px-4 md:px-0 mt-8">
             <ServicesCard :services="services" />
     </div>

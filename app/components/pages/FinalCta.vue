@@ -6,13 +6,13 @@
         <div class="final-cta-image ">
           <img src="/m-logo.png" alt="Logo" class="z-50  mx-auto text-center block bg-gray-50 invert logo w-20 h-20 border p-2 rounded-lg mb-8 hover:scale-105 hover:rotate-3 transition-all">
       </div>
-          <h2 class="text-2xl md:text-3xl font-medium">Get in touch</h2>
+          <h2 class="text-2xl md:text-3xl font-medium">Contattami subito</h2>
           <p class="text-gray-400 mt-4">
-              I'm always happy to hear from you, whether you need help with a project, want to collaborate on a new idea, or just want to say hi.
+             Sono sempre disponibile per discutere di progetti, tecnologie o semplicemente fare due chiacchiere. Scrivimi direttamente o contattami via email.
           </p>
           <div class="flex gap-4 mt-8 items-center justify-center">
-              <NuxtLink to="/contact" class="primary cta-link">Contact</NuxtLink>
-              <a href="https://github.com/maurodf0" target="_blank" class="cta-link">Github</a>
+              <a href="mailto:maurodefalco96@gmail.com" class="primary cta-link">Mandami una mail</a>
+             
           </div>
       </div>
       
