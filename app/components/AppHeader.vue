@@ -3,7 +3,13 @@
 
     const isOpen = ref(false);
 
-    const links = [
+    interface Link {
+        key: string;
+        label: string;  
+        url: string;
+    }
+
+    const links: Array<Link> = [
     {
         key: 'about',
         label: 'About',
@@ -19,11 +25,7 @@
         label: 'Projects',
         url: '/projects',
     },
-    {
-        key: 'contact',
-        label: 'Contact',
-        url: '/contact',
-    }]
+]
 
 </script>
 
