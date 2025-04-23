@@ -157,7 +157,7 @@ items.forEach((item, index) => {
 
 })
 
-const { data } = await useFetch<{ description?: string }>('https://maurodefalco.it/wp-json/', {
+const { data } = await useFetch<{ description?: string }>('https://wp.maurodefalco.it/wp-json/', {
     method: 'GET',
 
 });
