@@ -19,6 +19,7 @@ body {
   font-family: "DM Sans", sans-serif;
   background-image: url("/assets/noise-texture.svg");
   @apply bg-gray-950 bg-repeat text-gray-50;
+  overflow-x: hidden;
 }
 .primary {
   @apply inline-flex relative h-fit w-fit rounded-lg px-4 py-2;
