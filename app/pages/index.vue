@@ -137,10 +137,10 @@ items.forEach((item, index) => {
   tl.fromTo(item, {
     yPercent: 150,
     opacity: 0,
-    rotateY: 165,
-    rotateX: 365,
+    rotateY: 85,
+    rotateX: 65,
     zIndex: 10 * (index + 1),
-    z: 2000,
+    z: 900,
   }, {
     yPercent: 0,
     opacity: 1,
