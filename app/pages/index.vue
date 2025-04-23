@@ -136,7 +136,7 @@ const tl = gsap.timeline({
 items.forEach((item, index) => {
     if(index === 0) return;
   tl.fromTo(item, {
-    yPercent: 300,
+    yPercent: 150,
     opacity: 0,
     rotate: 25,
     ease: 'none',
