@@ -45,6 +45,7 @@
                         type="button"
                         class="block md:hidden p-2 text-3xl text-white"
                         :aria-expanded="isOpen"
+                        aria-label="Open menu"
                         @click="isOpen = true"
                      >
                      <Icon name="ph:list-bold" />
@@ -56,6 +57,7 @@
                 <button
                 :aria-expanded="isOpen"
                 type="button"
+                aria-label="Close menu"
                 class="block md:hidden p-2 text-3xl text-white"
                 @click="isOpen = false"
                 >
