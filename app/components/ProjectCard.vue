@@ -16,7 +16,7 @@ const { projects } = defineProps<{
 
 <template>
         <div class="bg-gradient-blur fixed inset-0 pointer-events-none -z-10">
-            <div class="rotate-45 bg-gradient-to-r from-teal-600/85 to-sky-600/40 w-full md:w-1/2 h-[250px] filter blur-[180px] absolute mix-blend-screen bottom-1/2 -right-1/4 glow-ball"></div>
+            <div class="rotate-45 bg-gradient-to-r from-teal-600/85 to-sky-600/40 w-1/2 h-[250px] filter blur-[180px] absolute mix-blend-screen bottom-1/2 left-0 md:-right-1/4 glow-ball"></div>
         </div>
 
             <div 
