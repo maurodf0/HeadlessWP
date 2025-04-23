@@ -277,7 +277,7 @@ const services: Array<SingleService> = [
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
             <p class="mt-4">Una lista di alcuni progetti realizzati con le tecnologie e framework che più amo. Naviga il codice su Github oppure scopri il sito/app live.</p>
-               <NuxtLink to="/projects" class="primary">Scopri i progetti</NuxtLink>
+               <NuxtLink to="/projects" class="primary relative z-[100]">Scopri i progetti</NuxtLink>
         </div>
         <ProjectCard :projects="projects" />
     </div>
