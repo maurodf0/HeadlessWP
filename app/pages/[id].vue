@@ -69,7 +69,7 @@ interface WpPost {
 </article>
 
     <div class="artile-meta mt-6 max-w-[880px] mx-auto flex gap-4 justify-between items-center px-4 mb-8">
-        Tagged in: <div class="categories flex gap-2 flex-wrap">
+        Tagged in: <div class="categories flex gap-6 md:gap-2 flex-wrap">
              <NuxtLink 
                 v-for="category in singlePost?._embedded?.['wp:term'][0]" 
                 :key="category.id" 
