@@ -120,12 +120,11 @@ onMounted(() => {
     }, '-=.5')
 
   const isMobile: boolean = window.innerWidth < 768;
-
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.projects-pin',
     start: isMobile ? '+=270px top' : 'top +=100px',
-    end: `+=${items.length * 400}`,
+    end: `+=${(items.length - 1) * 400}`,
     scrub: 1,
     pin: true,
     pinSpacing: true,
@@ -138,18 +137,22 @@ items.forEach((item, index) => {
   tl.fromTo(item, {
     yPercent: 150,
     opacity: 0,
-    rotate: 25,
-    ease: 'none',
-    z: 1000,
+    rotateY: 165,
+    rotateX: 365,
+    zIndex: 10 * (index + 1),
+    z: 2000,
   }, {
     yPercent: 0,
     opacity: 1,
-    rotate: 0,
+    rotateY: 0,
+    rotateX: 0,
+    zIndex: 10 * (index + 1),
     z: 0,
-    zIndex: 10000 * (index + 1),
+    ease: 'power3.out',
+
   });
-  
 });
+
 
 
 

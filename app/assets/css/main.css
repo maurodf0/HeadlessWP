@@ -16,6 +16,18 @@ p {
   @apply text-gray-400 mb-8;
 }
 
+.projects-pin {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.projects-pin-item {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform-origin: center center;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   background-image: url("/assets/noise-texture.svg");
