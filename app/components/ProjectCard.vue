@@ -31,7 +31,7 @@ const { projects } = defineProps<{
             >
             <NuxtLink target="_blank" :to="project.url" class="flex flex-col gap-2">
                 <div class="hidden md:block mb-4 rounded-lg w-full h-48 bg-gray-800">
-                    <img :src="project.image" alt="Project Image" class=" w-full h-full object-cover rounded-lg">
+                    <img loading="lazy" :src="project.image" alt="Project Image" class=" w-full h-full object-cover rounded-lg">
                 </div>
             </NuxtLink>
                 <h2 class="text-2xl font-medium">{{ project.title }}</h2>
