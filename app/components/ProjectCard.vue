@@ -46,10 +46,10 @@ const { projects } = defineProps<{
                 </div>
                 <hr class="border-gray-700">
                 <div class="flex gap-4 mt-4">
-                    <NuxtLink target="_blank" :to="project.github" class="text-gray-400 hover:text-gray-200">
+                    <NuxtLink title="Github Project" target="_blank" :to="project.github" class="text-gray-400 hover:text-gray-200">    
                         <Icon alt="Github Logo" name="ph:github-logo" class="w-6 h-6" />
                     </NuxtLink>
-                    <NuxtLink target="_blank" :to="project.url" class="text-gray-400 hover:text-gray-200">
+                    <NuxtLink title="Live Link Project" target="_blank" :to="project.url" class="text-gray-400 hover:text-gray-200">
                         <Icon alt="Url Logo" name="ph:link-simple-bold" class="w-6 h-6" />
                     </NuxtLink>
                     </div>
