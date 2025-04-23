@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 useSeoMeta({
-    title: 'Mauro De Falco - Frontend Developer',
+    title: 'Mauro De Falco | Frontend Developer',
     description: 'Web developer con esperienza nello sviluppo di siti e app web ad alto impatto visivo e funzionale, con una forte attenzione ai dettagli visivi e al design.',
 });
 
@@ -134,23 +134,21 @@ const tl = gsap.timeline({
 });
 
 items.forEach((item, index) => {
-  tl.to(item, {
-    xPercent: -100,
-
-    opacity: 1,
+    if(index === 0) return;
+  tl.fromTo(item, {
+    yPercent: 300,
+    opacity: 0,
     rotate: 25,
     ease: 'none',
-  });
-
-  tl.to(item, {
-    xPercent: 0,
-
+    z: 1000,
+  }, {
+    yPercent: 0,
     opacity: 1,
-    zIndex: -10 * (index + 1),
-    transform: `translate(${10 * index}px, ${-10 * index}px)`,
     rotate: 0,
-    ease: 'none',
+    z: 0,
+    zIndex: 10000 * (index + 1),
   });
+  
 });
 
 
