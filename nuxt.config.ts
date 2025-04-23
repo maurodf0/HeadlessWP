@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: 'Mauro De Falco',
+      title: 'Mauro De Falco | Frontend Developer',
       htmlAttrs: {
         lang: 'it',
       },

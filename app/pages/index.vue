@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 useSeoMeta({
-    title: 'Mauro Defalco - Frontend Developer',
-    description: 'Mauro Defalco è un web developer con esperienza nello sviluppo di siti e app web ad alto impatto visivo e funzionale, con una forte attenzione ai dettagli visivi e al design.',
+    title: 'Mauro De Falco - Frontend Developer',
+    description: 'Web developer con esperienza nello sviluppo di siti e app web ad alto impatto visivo e funzionale, con una forte attenzione ai dettagli visivi e al design.',
 });
 
 import { gsap } from "gsap";    
