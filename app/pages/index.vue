@@ -135,12 +135,13 @@ const tl = gsap.timeline({
 items.forEach((item, index) => {
     if(index === 0) return;
   tl.fromTo(item, {
-    yPercent: 150,
+    yPercent: 50,
     opacity: 0,
-    rotateY: 85,
-    rotateX: 65,
+    rotateY: 45,
+    rotateX: 15,
     zIndex: 10 * (index + 1),
-    z: 900,
+    z: 200,
+    scale: 0.5,
   }, {
     yPercent: 0,
     opacity: 1,
@@ -149,7 +150,7 @@ items.forEach((item, index) => {
     zIndex: 10 * (index + 1),
     z: 0,
     ease: 'power3.out',
-
+    scale: 1,
   });
 });
 
