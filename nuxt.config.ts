@@ -24,6 +24,10 @@ export default defineNuxtConfig({
 
   css: ['@/assets/css/main.css'],
    nitro: {
-    compressPublicAssets: true
+    compressPublicAssets: true,
+      prerender: {
+      crawlLinks: true, 
+      routes: ['/'],      
+    }
   }
 })
