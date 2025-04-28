@@ -159,10 +159,6 @@ items.forEach((item, index) => {
 
 })
 
-const { data } = await useFetch<{ description?: string }>('https://wp.maurodefalco.it/wp-json/', {
-    method: 'GET',
-
-});
 
 interface SingleProject {
     id: number;
@@ -255,8 +251,12 @@ const services: Array<SingleService> = [
     <AppLoader :loading="loading" />
 
     <div class="hero-wrapper text-center px-4 lg:px-10 max-w-[90%] md:max-w-[1080px] mx-auto py-6 md:py-16">
-        <div class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-1/2  h-[120px] filter blur-[160px] absolute mix-blend-screen -z-10 top-16 left-3/3 md:left-1/3"></div>
-          <div class="rotate-15 bg-gradient-to-r from-purple-600/65 to-blue-600/20 w-full md:w-1/2 h-[200px] filter blur-[180px] absolute mix-blend-screen top-20 right-11 glow-ball"></div>
+        <div
+            class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-1/2  h-[120px] filter blur-[160px] absolute mix-blend-screen -z-10 top-16 left-3/3 md:left-1/3">
+        </div>
+        <div
+            class="rotate-15 bg-gradient-to-r from-purple-600/65 to-blue-600/20 w-full md:w-1/2 h-[200px] filter blur-[180px] absolute mix-blend-screen top-20 right-11 glow-ball">
+        </div>
 
         <div class="overflow-hidden">
             <h1
@@ -264,8 +264,8 @@ const services: Array<SingleService> = [
                 Fast, Secure, <em>Customized</em> Web Experiences.
             </h1>
         </div>
-         <div class="overflow-hidden">
-            <p class="text-gray-400 px-4 md:max-w-lg mx-auto p-level">{{ data?.description }}</p>
+        <div class="overflow-hidden">
+            <p class="text-gray-400 px-4 md:max-w-lg mx-auto p-level">Front-end Developer specializzato in WordPress, Vue e Nuxt.</p>
         </div>
         <div class="flex justify-center mt-4 gap-8 mx-auto align-center w-100">
             <NuxtLink to="/about" class="primary cta-link">About</NuxtLink>
@@ -274,22 +274,26 @@ const services: Array<SingleService> = [
     </div>
     <LazyPagesLogoCarousel />
 
-    <div class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[85vh] md:min-h-[100vh] py-8 mt-[60px] md:mt-[190px]">
+    <div
+        class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[85vh] md:min-h-[100vh] py-8 mt-[60px] md:mt-[190px]">
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
-            <p class="mt-4">Una lista di alcuni progetti realizzati con le tecnologie e framework che più amo. Naviga il codice su Github oppure scopri il sito/app live.</p>
-               <NuxtLink to="/projects" class="primary relative z-[100]">Scopri i progetti</NuxtLink>
+            <p class="mt-4">Una lista di alcuni progetti realizzati con le tecnologie e framework che più amo. Naviga il
+                codice su Github oppure scopri il sito/app live.</p>
+            <NuxtLink to="/projects" class="primary relative z-[100]">Scopri i progetti</NuxtLink>
         </div>
         <LazyProjectCard :projects="projects" />
     </div>
 
 
-   <div class="services-container max-w-[90%] md:max-w-[1080px] mx-auto mt-72 md:mt-16 relative">
-     <div class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-1/2  h-[120px] filter blur-[160px] absolute  -z-10 top-16 left-3/3 md:left-1/3"></div>
-    <h2 class="text-2xl md:text-3xl font-medium px-4">Servizi</h2>
+    <div class="services-container max-w-[90%] md:max-w-[1080px] mx-auto mt-72 md:mt-16 relative">
+        <div
+            class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-1/2  h-[120px] filter blur-[160px] absolute  -z-10 top-16 left-3/3 md:left-1/3">
+        </div>
+        <h2 class="text-2xl md:text-3xl font-medium px-4">Servizi</h2>
         <div class="grid md:grid-cols-3 gap-8 px-4 md:px-0 mt-8">
             <LazyServicesCard :services="services" />
-    </div>
+        </div>
     </div>
 
     <div class="mt-16 mx-auto max-w-[90%] md:max-w-[1080px]">
