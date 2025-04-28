@@ -272,7 +272,7 @@ const services: Array<SingleService> = [
             <NuxtLink to="#contact" class="onlyLink cta-link">Contact</NuxtLink>
         </div>
     </div>
-    <PagesLogoCarousel />
+    <LazyPagesLogoCarousel />
 
     <div class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[85vh] md:min-h-[100vh] py-8 mt-[60px] md:mt-[190px]">
         <div class="project-text max-w-sm mt-4">
@@ -280,7 +280,7 @@ const services: Array<SingleService> = [
             <p class="mt-4">Una lista di alcuni progetti realizzati con le tecnologie e framework che più amo. Naviga il codice su Github oppure scopri il sito/app live.</p>
                <NuxtLink to="/projects" class="primary relative z-[100]">Scopri i progetti</NuxtLink>
         </div>
-        <ProjectCard :projects="projects" />
+        <LazyProjectCard :projects="projects" />
     </div>
 
 
@@ -288,12 +288,12 @@ const services: Array<SingleService> = [
      <div class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-1/2  h-[120px] filter blur-[160px] absolute  -z-10 top-16 left-3/3 md:left-1/3"></div>
     <h2 class="text-2xl md:text-3xl font-medium px-4">Servizi</h2>
         <div class="grid md:grid-cols-3 gap-8 px-4 md:px-0 mt-8">
-            <ServicesCard :services="services" />
+            <LazyServicesCard :services="services" />
     </div>
     </div>
 
     <div class="mt-16 mx-auto max-w-[90%] md:max-w-[1080px]">
-        <PagesFinalCta />
+        <LazyPagesFinalCta />
     </div>
 
 </template>
