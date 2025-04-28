@@ -19,6 +19,10 @@ export default defineNuxtConfig({
         { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    },
+        pageTransition: {
+      name: 'page',
+      mode: 'out-in'
     }
   },
 

@@ -45,6 +45,7 @@ function goToPage(page: number) {
 
 <template>
 
+<div class="blog-wrapper">
     <PagesIntroContent>
         <template #title>Blog</template>
         <template #description>Articoli e guide su ciò che <em>amo fare.</em> Web Development, Vue, Nuxt, WordPress, UI/UX.</template>
@@ -108,5 +109,5 @@ function goToPage(page: number) {
     →
   </button>
 </div>
-
+</div>
 </template>

@@ -247,6 +247,8 @@ const services: Array<SingleService> = [
 </script>
 
 <template>
+    <div class="home-wrapper">
+        
 
     <AppLoader :loading="loading" />
 
@@ -299,5 +301,5 @@ const services: Array<SingleService> = [
     <div class="mt-16 mx-auto max-w-[90%] md:max-w-[1080px]">
         <LazyPagesFinalCta />
     </div>
-
+    </div>
 </template>
