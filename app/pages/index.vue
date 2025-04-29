@@ -72,7 +72,7 @@ onMounted(() => {
     },'-=.25')
     .from('.p-level', {
         y: 20,
-        opacity: 0,
+        opacity: 0.1,
         duration: .5,
         ease: 'power3.inOut',
     })
