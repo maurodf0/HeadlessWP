@@ -67,13 +67,13 @@ onMounted(() => {
     .from('.heading-level', {
         y: 50,
         opacity: 0,
-        duration: .75,
+        duration: .5,
         ease: 'power3.inOut',
     },'-=.25')
     .from('.p-level', {
         y: 20,
         opacity: 0,
-        duration: .5,
+        duration: .35,
         ease: 'power3.inOut',
     })
     .from('.cta-link', {
