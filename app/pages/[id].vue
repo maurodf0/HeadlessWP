@@ -26,7 +26,9 @@ interface WpPost {
     const route = useRoute();
     const slug = route.params.id as string;
     const { data: singlePosts, loading, error } = await useFetch<WpPost[]>(`https://wp.maurodefalco.it/wp-json/wp/v2/posts?slug=${slug}&_embed`);  
-    
+if (error) {
+  throw createError({ statusCode: 404, statusMessage: 'Contenuto non trovato' })
+}
     const singlePost = singlePosts.value?.[0];
     const excerpt = singlePost?.excerpt.rendered;
 
