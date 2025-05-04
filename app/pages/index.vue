@@ -1,5 +1,8 @@
 <script setup lang="ts">
 
+import { UseHomeViewd } from '~/composables/UseHomeView'
+const { isHomeView } = UseHomeViewd()
+
 useSeoMeta({
     title: 'Mauro De Falco | Frontend Developer',
     description: 'Web developer con esperienza nello sviluppo di siti e app web ad alto impatto visivo e funzionale, con una forte attenzione ai dettagli visivi e al design.',
