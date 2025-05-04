@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
-import { UseHomeViewd } from '~/composables/UseHomeView'
-const { isHomeView } = UseHomeViewd()
+
+const { isHomeView } = UseHomeView()
 
 useSeoMeta({
     title: 'Mauro De Falco | Frontend Developer',
@@ -246,7 +246,7 @@ const services: Array<SingleService> = [
     },
 ]
 
-
+console.log(isHomeView.value)
 </script>
 
 <template>

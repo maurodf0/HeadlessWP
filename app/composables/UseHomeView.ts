@@ -1,10 +1,10 @@
-export default function useHomeView() {
+export default function UseHomeView() {
 
-  const isHomeView = ref(false);
+  const isHomeView: Ref<boolean> = ref(false)
 
   const route = useRoute();
   if (route.path === '/') {
-    isHomeView.value = true;
+    isHomeView.value = true
   }
   return {
     isHomeView,
