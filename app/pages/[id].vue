@@ -58,12 +58,6 @@ if (!singlePosts.value[0]) {
         opacity: 0,
         y: 50,
       })
-      .from('.image_single', {
-        duration: .5,
-        ease: 'power3.inOut',
-        opacity: 0,
-        scale: 0.5,
-      })
       })
 
  
