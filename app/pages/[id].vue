@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import { gsap } from 'gsap'
+
 interface WpPost {
   id: number;
   title: { rendered: string };
@@ -41,6 +43,31 @@ if (!singlePosts.value[0]) {
     }
     )
 
+    onMounted( () => {  
+      const tlOpen = gsap.timeline();
+      
+      tlOpen.from('.page_title', {
+        duration: .5,
+        ease: 'power3.inOut',
+        opacity: 0,
+        y: 50,
+      })
+      .from('.page_desc', {
+        duration: .5,
+        ease: 'power3.inOut',
+        opacity: 0,
+        y: 50,
+      })
+      .from('.image_single', {
+        duration: .5,
+        ease: 'power3.inOut',
+        opacity: 0,
+        scale: 0.5,
+      })
+      })
+
+ 
+
 </script>
 
 <template>
@@ -57,10 +84,10 @@ if (!singlePosts.value[0]) {
 
     <article class="!max-w-[880px] mx-auto prose !prose-invert p-4">
 
-      <div class="image-container mx-auto">
+      <div class="image-container overflow-hidden mx-auto">
         <img v-if="singlePost?._embedded['wp:featuredmedia']"
           :src="singlePost?._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image"
-          class="mb-4 md:rounded-lg w-full object-cover">
+          class="mb-4 md:rounded-lg w-full object-cover image_single">
       </div>
 
       <div class="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 justify-between items-center mx-auto">
@@ -93,3 +120,9 @@ if (!singlePosts.value[0]) {
     </div>
   </div>
 </template>
+
+<style scoped>
+.overflow-hidden p {
+  @apply mb-0
+}
+</style>
