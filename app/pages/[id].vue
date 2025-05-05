@@ -76,9 +76,7 @@ if (!singlePosts.value[0]) {
     <PagesIntroContent length="max-w-full">
       <template #title>{{ singlePost?.title.rendered }}</template>
       <template #description>
-        <em>
-          <div v-html="excerpt"></div>
-        </em>
+          <div class="excerpt" v-html="excerpt"></div>
       </template>
     </PagesIntroContent>
 
@@ -122,7 +120,7 @@ if (!singlePosts.value[0]) {
 </template>
 
 <style scoped>
-.overflow-hidden p {
-  @apply mb-0
+.excerpt p {
+margin-bottom: 0 !important;
 }
 </style>
