@@ -1,7 +1,8 @@
 <script setup lang="ts">
 
 
-const { isHomeView } = UseHomeView()
+const { isFirstVisit, isReady } = UseHomeView()
+
 
 useSeoMeta({
     title: 'Mauro De Falco | Frontend Developer',
@@ -54,7 +55,7 @@ items.forEach((item, index) => {
 });
 
 
-
+console.log(isFirstVisit.value)
 
 })
 
@@ -142,14 +143,14 @@ const services: Array<SingleService> = [
     },
 ]
 
-console.log(isHomeView.value)
+
 </script>
 
 <template>
     <div class="home-wrapper">
         
 
-    <AppLoader />
+    <AppLoader v-if="isFirstVisit && isReady" />
 
     <div class="hero-wrapper text-center px-4 lg:px-10 max-w-[90%] md:max-w-[1080px] mx-auto py-6 md:py-16">
         <div
