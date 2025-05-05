@@ -127,11 +127,11 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.projects-pin',
     start: isMobile ? '+=270px top' : 'top +=100px',
-    end: `+=${(items.length - 1) * 400}`,
-    scrub: 1,
+    end: isMobile ? `+=${(items.length - 1) * 1400}` : `+=${(items.length - 1) * 800}`,
+    scrub: true,
     pin: true,
     pinSpacing: true,
-    // markers: true,
+    //markers: true,
   }
 });
 
@@ -146,11 +146,11 @@ items.forEach((item, index) => {
     z: 200,
     scale: 0.5,
   }, {
+    zIndex: 10 * (index + 1),
     yPercent: 0,
     opacity: 1,
     rotateY: 0,
     rotateX: 0,
-    zIndex: 10 * (index + 1),
     z: 0,
     ease: 'power3.out',
     scale: 1,
@@ -280,7 +280,7 @@ console.log(isHomeView.value)
     <LazyPagesLogoCarousel />
 
     <div
-        class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[85vh] md:min-h-[100vh] py-8 mt-[60px] md:mt-[190px]">
+        class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[85vh] md:min-h-[100vh] py-10 md:py-6 mt-[60px] md:mt-[190px]">
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
             <p class="mt-4">Una lista di alcuni progetti realizzati con le tecnologie e framework che più amo. Naviga il
@@ -291,7 +291,7 @@ console.log(isHomeView.value)
     </div>
 
 
-    <div class="services-container max-w-[90%] md:max-w-[1080px] mx-auto mt-72 md:mt-16 relative">
+    <div class="services-container max-w-[90%] md:max-w-[1080px] mx-auto mt-72 md:mt-16 relative px-4">
         <div
             class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-1/2  h-[120px] filter blur-[160px] absolute  -z-10 top-16 left-3/3 md:left-1/3">
         </div>

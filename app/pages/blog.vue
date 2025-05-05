@@ -1,43 +1,39 @@
 <script setup lang="ts">
 
 interface WpPosts {
-    _embedded: {
-        'wp:featuredmedia': Array<{
-            source_url: string;
-        }>;
-    },
-    title: {
-        rendered: string;
-    },
-    excerpt: {
-        rendered: string;
-    }
-    slug: string;
-    id: number;
-    date: string;
+  _embedded: {
+    'wp:featuredmedia': Array<{
+      source_url: string
+    }>
+  }
+  title: { rendered: string }
+  excerpt: { rendered: string }
+  slug: string
+  id: number
+  date: string
 }
 
-// Dati di paginazione
-const currentPage = ref<number>(1);
-const perPage:number = 6;
-const totalPages = ref<number>(1);
+const currentPage = ref(1)
+const perPage = 12
+const totalPages = ref(1)
 
-// Fetch post
-const { data: posts, pending: loading, error, refresh, execute } = await useFetch<WpPosts>(
-  () => `https://wp.maurodefalco.it/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage.value}`,
-  {
-    onResponse({ response }) {
-      const total = response.headers.get('x-wp-totalpages');
-      if (total) {
-        totalPages.value = parseInt(total, 10);
-      }
+const endpoint = computed(() =>
+  `https://wp.maurodefalco.it/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage.value}`
+)
+
+const { data: posts, pending: loading, error, refresh } = useFetch<WpPosts[]>(endpoint, {
+  watch: [endpoint], // trigger automatic refetch on computed change
+  onResponse({ response }) {
+    const total = response.headers.get('x-wp-totalpages')
+    if (total) {
+      totalPages.value = parseInt(total, 10)
     }
   }
-);
+})
 
 function goToPage(page: number) {
   if (page >= 1 && page <= totalPages.value) {
-    currentPage.value = page;
+    currentPage.value = page
   }
 }
 </script>
