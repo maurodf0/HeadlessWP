@@ -43,17 +43,6 @@ if (!singlePosts.value[0]) {
     }
     )
 
-    useHead({
-  link: [
-    {
-      rel: 'preload',
-      as: 'image',
-      href: singlePost?._embedded['wp:featuredmedia']?.[0]?.source_url || '',
-    },
-  ],
-})
-
-
     onMounted( () => {  
       const tlOpen = gsap.timeline();
       
