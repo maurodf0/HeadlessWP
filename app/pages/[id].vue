@@ -43,6 +43,17 @@ if (!singlePosts.value[0]) {
     }
     )
 
+    useHead({
+  link: [
+    {
+      rel: 'preload',
+      as: 'image',
+      href: singlePost?._embedded['wp:featuredmedia']?.[0]?.source_url || '',
+    },
+  ],
+})
+
+
     onMounted( () => {  
       const tlOpen = gsap.timeline();
       
@@ -90,7 +101,7 @@ if (!singlePosts.value[0]) {
 
       <div class="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 justify-between items-center mx-auto">
         <div class="author prose prose-invert flex align-center gap-2">
-          Written by: <img :src="singlePost?._embedded?.['author'][0]?.avatar_urls['96']"
+          Written by: <img alt="Author Avatar" :src="singlePost?._embedded?.['author'][0]?.avatar_urls['96']"
             class="rounded-full w-8 h-8 mt-0">
           {{ singlePost?._embedded?.['author'][0]?.name }}
         </div>
