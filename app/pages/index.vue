@@ -13,114 +13,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const loading = ref('000') // inizializza come stringa padded
-
-function zeroPad(num: number, places: number): string {
-  return String(num).padStart(places, '0')
-}
-
 onMounted(() => {
-  
-  let obj = { value: 0 }
 
-  const navLinks = gsap.utils.toArray('nav a') as HTMLElement[];
-    const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
-    const logoStack = gsap.utils.toArray('.logo-img-stack') as HTMLElement[];
-
-  const tlOpener = gsap.timeline();
-  tlOpener.to(obj, {
-    value: 100,
-    duration: 1.5,
-    ease: 'power3.inOut',
-    onUpdate: () => {
-      loading.value = zeroPad(Math.round(obj.value), 3)
-    },
-  })
-  .to('.logo-loader', {
-    duration: .35,
-    ease: 'power3.inOut',
-    scale: .25,
-    opacity: 0
-  })
-  .to('.app-loader', {
-    duration: .75,
-    ease: 'power3.inOut',
-    transform: 'translateY(-110%)',
-  }, '<')
-  .to('.app-loader-1', {
-     duration: 1.25,
-    ease: 'power3.inOut',
-    transform: 'translateY(-100%)',
-  },'<')
-  .to('.app-loader-2', {
-     duration: 1.05,
-    ease: 'power3.inOut',
-    transform: 'translateY(-100%)',
- onComplete: () => {
-    const wrapper = document.querySelector('.app-loader-wrapper')
-    if (wrapper) wrapper.remove()
-  }
-},'<')
-       .from('.glow-effect', { 
-        scale: .5,
-        duration: .25,
-        ease: 'power3.inOut',
-        opacity: 0,
-     }, '<')
-    .from('.heading-level', {
-        y: 50,
-        opacity: 0,
-        duration: .5,
-        ease: 'power3.inOut',
-    },'-=.25')
-    .from('.p-level', {
-        y: 20,
-        opacity: 0,
-        duration: .35,
-        ease: 'power3.inOut',
-    })
-    .from('.cta-link', {
-        y: 20,
-        opacity: 0,
-        duration: .5,
-        ease: 'power3.inOut',
-        stagger: {
-            amount: 0.2,
-            ease: 'power3.inOut',
-        },
-    })
-    .from('.logo', {
-        y: -30,
-        rotate: 0,
-        duration: .5,
-        ease: 'power3.inOut',
-    }, '-=.5')
-    .from('.logo-name', {
-        xPercent: -50,
-        rotate: 0,
-        duration: .5,
-        ease: 'power3.inOut',
-    })
-     .from('nav a', {
-        opacity: 0,
-        duration: .5,
-        stagger: {
-            amount: 0.25,
-            ease: 'power2.inOut',
-        },
-    }, '-=.5')
-    .from('.logo-img-stack', {
-        y: 30,
-        rotate: 0,
-        opacity: 0,
-        duration: .5,
-        ease: 'power3.inOut',
-        stagger: {
-            amount: .75,
-            from: 'start',
-            ease: 'power3.inOut',
-        },
-    }, '-=.5')
+const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
+    
 
   const isMobile: boolean = window.innerWidth < 768;
 const tl = gsap.timeline({
@@ -253,7 +149,7 @@ console.log(isHomeView.value)
     <div class="home-wrapper">
         
 
-    <AppLoader :loading="loading" />
+    <AppLoader />
 
     <div class="hero-wrapper text-center px-4 lg:px-10 max-w-[90%] md:max-w-[1080px] mx-auto py-6 md:py-16">
         <div
