@@ -153,12 +153,12 @@ const services: Array<SingleService> = [
     <AppLoader v-if="isFirstVisit && isReady" />
 
     <div class="hero-wrapper text-center px-4 lg:px-10 max-w-[90%] md:max-w-[1080px] mx-auto py-6 md:py-16">
-        <div
+        <!-- <div
             class="glow-effect rotate-25 bg-gradient-to-r from-sky-600/95 to-teal-600/95 w-1/2  h-[120px] filter blur-[160px] absolute mix-blend-screen -z-10 top-16 left-3/3 md:left-1/3">
-        </div>
-        <div
+        </div> -->
+        <!-- <div
             class="rotate-15 bg-gradient-to-r from-purple-600/65 to-blue-600/20 w-full md:w-1/2 h-[200px] filter blur-[180px] absolute mix-blend-screen top-20 right-11 glow-ball">
-        </div>
+        </div> -->
 
         <div class="overflow-hidden">
             <h1
