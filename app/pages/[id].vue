@@ -77,9 +77,11 @@ if (!singlePosts.value[0]) {
     <article class="!max-w-[880px] mx-auto prose !prose-invert p-4">
 
       <div class="image-container overflow-hidden mx-auto">
-        <img v-if="singlePost?._embedded['wp:featuredmedia']"
+        <NuxtImg v-if="singlePost?._embedded['wp:featuredmedia']"
+        format="webp"
+        sizes="100vw"
           :src="singlePost?._embedded['wp:featuredmedia'][0]?.source_url" alt="Post Image"
-          class="mb-4 md:rounded-lg w-full object-cover image_single">
+          class="mb-4 md:rounded-lg w-full object-cover image_single" />
       </div>
 
       <div class="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 justify-between items-center mx-auto">

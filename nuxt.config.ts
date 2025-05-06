@@ -3,7 +3,13 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxt/icon', 'lenis/nuxt'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    'lenis/nuxt',
+    '@nuxt/image'
+  ],
   compatibilityDate: '2025-01-06',
   devtools: { enabled: true },
   app: {
