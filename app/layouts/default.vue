@@ -28,6 +28,6 @@ watch(lenis, (lenis) => {
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  transform: translateY(80px) translateZ(-300px);
+  transform: translateY(120px);
 }
 </style>

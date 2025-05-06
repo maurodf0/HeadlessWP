@@ -22,14 +22,21 @@ const endpoint = computed(() =>
 )
 
 const { data: posts, pending: loading, error, refresh } = await useFetch<WpPosts[]>(endpoint, {
-  watch: [endpoint], // trigger automatic refetch on computed change
+  key: `posts-page-${currentPage.value}`, // chiave unica per ogni pagina
+  watch: [endpoint],
   onResponse({ response }) {
     const total = response.headers.get('x-wp-totalpages')
     if (total) {
       totalPages.value = parseInt(total, 10)
     }
-  }
+  },
+  // Facoltativo: forza il caching lato client/server per una certa durata
+  // cache: true, // cache automatico lato server/client
+  // default: ttl 60s in SSR. Puoi anche specificare ttl:
+  // getCachedData: true,
 })
+
+
 
 function goToPage(page: number) {
   if (page >= 1 && page <= totalPages.value) {
