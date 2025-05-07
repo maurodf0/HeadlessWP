@@ -16,45 +16,53 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
 
-const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
-    
+    const items = gsap.utils.toArray('.projects-pin-item') as HTMLElement[];
+    const isMobile = window.innerWidth < 768;
 
-  const isMobile: boolean = window.innerWidth < 768;
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.projects-pin',
-    start: isMobile ? '+=270px top' : 'top +=100px',
-    end: isMobile ? `+=${(items.length - 1) * 1400}` : `+=${(items.length - 1) * 800}`,
-    scrub: true,
-    pin: true,
-    pinSpacing: true,
-    //markers: true,
-  }
-});
+    const itemDuration = 1;
+    const spacing = 1; // spaziatura lineare
+    const totalDuration = spacing * (items.length - 1);
 
-items.forEach((item, index) => {
-    if(index === 0) return;
-  tl.fromTo(item, {
-    yPercent: 50,
-    opacity: 0,
-    rotateY: 45,
-    rotateX: 15,
-    zIndex: 10 * (index + 1),
-    z: 200,
-    scale: 0.5,
-  }, {
-    zIndex: 10 * (index + 1),
-    yPercent: 0,
-    opacity: 1,
-    rotateY: 0,
-    rotateX: 0,
-    z: 0,
-    ease: 'power3.out',
-    scale: 1,
-  });
-});
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.projects-pin',
+            start: isMobile ? '+=270px top' : 'top +=100px',
+            end: `+=${totalDuration * 1000}`, // coerente con spacing
+            scrub: true,
+            pin: true,
+            pinSpacing: true,
+            // markers: true,
+        },
+    });
 
+    items.forEach((item, index) => {
+        if (index === 0) return;
 
+        tl.fromTo(
+            item,
+            {
+                yPercent: 50,
+                opacity: 0,
+                rotateY: 45,
+                rotateX: 15,
+                zIndex: 10 * (index + 1),
+                z: 200,
+                scale: 0.5,
+            },
+            {
+                yPercent: 0,
+                opacity: 1,
+                rotateY: 0,
+                rotateX: 0,
+                zIndex: 10 * (index + 1),
+                z: 0,
+                scale: 1,
+                ease: 'power3.out',
+                duration: itemDuration,
+            },
+            index * spacing // posizione precisa, regolare, senza accumulo
+        );
+    });
 console.log(isFirstVisit.value)
 
 })

@@ -1,23 +1,28 @@
-<script setup>
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { VueLenis, useLenis } from 'lenis/vue'
-import { watch } from 'vue'
 
-const lenis = useLenis(({ scroll }) => {
-  // called every scroll
-})
+onMounted(() => {
+  const lenis = useLenis()
 
-watch(lenis, (lenis) => {
-  // lenis instance
+  if (!lenis) return
+
+  const raf = (time: number) => {
+    lenis.raf(time)
+    ScrollTrigger.update()
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf) // 🔥 questa riga era mancante!
 })
 </script>
 
 <template>
-    <VueLenis root>
-        <AppHeader />
-        <slot />
-        <AppFooter />
-        <PagesAppTransition />
-    </VueLenis >
-
+  <VueLenis root>
+    <AppHeader />
+    <slot />
+    <AppFooter />
+    <PagesAppTransition />
+  </VueLenis>
 </template>
-
