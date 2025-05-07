@@ -16,18 +16,8 @@ watch(lenis, (lenis) => {
         <AppHeader />
         <slot />
         <AppFooter />
+        <PagesAppTransition />
     </VueLenis >
 
 </template>
 
-<style>
-.page-enter-active:not(.glow-effect),
-.page-leave-active:not(.glow-effect) {
-  transition: all 0.4s;
-}
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-  transform: translateY(120px);
-}
-</style>

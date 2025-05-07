@@ -21,7 +21,7 @@ const endpoint = computed(() =>
   `https://wp.maurodefalco.it/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage.value}`
 )
 
-const { data: posts, pending: loading, error, refresh } = await useFetch<WpPosts[]>(endpoint, {
+const { data: posts, pending: loading, error, refresh } = useFetch<WpPosts[]>(endpoint, {
   key: `posts-page-${currentPage.value}`, // chiave unica per ogni pagina
   watch: [endpoint],
   onResponse({ response }) {
