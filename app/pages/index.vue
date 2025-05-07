@@ -27,7 +27,7 @@ onMounted(() => {
         scrollTrigger: {
             trigger: '.projects-pin',
             start: isMobile ? '+=270px top' : 'top +=100px',
-            end: `+=${totalDuration * 1000}`, // coerente con spacing
+            end: `+=${totalDuration * 100}`, // coerente con spacing
             scrub: true,
             pin: true,
             pinSpacing: true,
@@ -63,7 +63,7 @@ onMounted(() => {
             index * spacing // posizione precisa, regolare, senza accumulo
         );
     });
-console.log(isFirstVisit.value)
+
 
 })
 
