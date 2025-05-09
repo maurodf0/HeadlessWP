@@ -32,7 +32,7 @@ const tl = gsap.timeline({
     scrub: true,
     pin: true,
     pinSpacing: true,
-    markers: true,
+    //markers: true,
   },
 });
 
