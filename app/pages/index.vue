@@ -23,17 +23,18 @@ onMounted(() => {
     const spacing = 1; // spaziatura lineare
     const totalDuration = spacing * (items.length - 1);
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.projects-pin',
-            start: isMobile ? '+=270px top' : 'top +=100px',
-            end: `+=${totalDuration * 100}`, // coerente con spacing
-            scrub: true,
-            pin: true,
-            pinSpacing: true,
-            // markers: true,
-        },
-    });
+const tl = gsap.timeline({
+  scrollTrigger: {
+      scroller: document.querySelector('[data-lenis-scroller]') as Element,
+    trigger: '.projects-pin',
+    start: isMobile ? '+=270px top' : 'top +=100px',
+    end: () => `+=${(spacing * (items.length - 1)) * window.innerHeight}`,
+    scrub: true,
+    pin: true,
+    pinSpacing: true,
+    markers: true,
+  },
+});
 
     items.forEach((item, index) => {
         if (index === 0) return;
@@ -185,7 +186,7 @@ const services: Array<SingleService> = [
     <LazyPagesLogoCarousel />
 
     <div
-        class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[85vh] md:min-h-[100vh] py-10 md:py-6 mt-[60px] md:mt-[190px]">
+        class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative Bemin-h-[100vh] py-10 md:py-6 mt-[60px] md:mt-[190px]">
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
             <p class="mt-4">Una lista di alcuni progetti realizzati con le tecnologie e framework che più amo. Naviga il
