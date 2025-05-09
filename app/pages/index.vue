@@ -186,7 +186,7 @@ const services: Array<SingleService> = [
     <LazyPagesLogoCarousel />
 
     <div
-        class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative Bemin-h-[100vh] py-10 md:py-6 mt-[60px] md:mt-[190px]">
+        class="max-w-[90%] md:max-w-[880px] mx-auto projects-pin flex gap-4 p-4 relative min-h-[100vh] py-10 md:py-6 mt-[60px] md:mt-[190px]">
         <div class="project-text max-w-sm mt-4">
             <h2 class="text-2xl md:text-3xl font-medium">Projects</h2>
             <p class="mt-4">Una lista di alcuni progetti realizzati con le tecnologie e framework che più amo. Naviga il

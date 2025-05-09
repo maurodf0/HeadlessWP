@@ -14,7 +14,7 @@ onMounted(() => {
     requestAnimationFrame(raf)
   }
 
-  requestAnimationFrame(raf) // 🔥 questa riga era mancante!
+  requestAnimationFrame(raf)
 })
 </script>
 
