@@ -46,7 +46,7 @@ const tl = gsap.timeline({
                 yPercent: 50,
                 opacity: 0,
                 rotateY: 25,
-                rotateX: 55,
+                rotateX: 25,
                 zIndex: 10 * (index + 1),
                 z: 400,
                 scale: 0.25,
