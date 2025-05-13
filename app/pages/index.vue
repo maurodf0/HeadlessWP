@@ -20,15 +20,16 @@ onMounted(() => {
     const isMobile = window.innerWidth < 768;
 
     const itemDuration = 1;
-    const spacing = 1; // spaziatura lineare
-    const totalDuration = spacing * (items.length - 1);
+    const spacing = 1; 
+    const extraHold = 1.5;
+    const totalDuration = spacing * (items.length - 1) + extraHold;
 
 const tl = gsap.timeline({
   scrollTrigger: {
       scroller: document.querySelector('[data-lenis-scroller]') as Element,
     trigger: '.projects-pin',
     start: isMobile ? '+=270px top' : 'top +=100px',
-    end: () => `+=${(spacing * (items.length - 1)) * window.innerHeight}`,
+    end: () => `+=${totalDuration * window.innerHeight}`,
     scrub: true,
     pin: true,
     pinSpacing: true,
@@ -44,18 +45,18 @@ const tl = gsap.timeline({
             {
                 yPercent: 50,
                 opacity: 0,
-                rotateY: 45,
-                rotateX: 15,
+                rotateY: 25,
+                rotateX: 55,
                 zIndex: 10 * (index + 1),
-                z: 200,
-                scale: 0.5,
+                z: 400,
+                scale: 0.25,
             },
             {
                 yPercent: 0,
                 opacity: 1,
                 rotateY: 0,
                 rotateX: 0,
-                zIndex: 10 * (index + 1),
+                zIndex: 9999 * (index + 1),
                 z: 0,
                 scale: 1,
                 ease: 'power3.out',
@@ -63,9 +64,13 @@ const tl = gsap.timeline({
             },
             index * spacing // posizione precisa, regolare, senza accumulo
         );
+        if (index === (items.length - 1)) {
+        // Piccolo extra step per "fissare" la posizione
+        tl.to({}, {
+            duration: extraHold
+        }, index * spacing + itemDuration);
+    }
     });
-
-
 })
 
 
