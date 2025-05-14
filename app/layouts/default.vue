@@ -21,7 +21,7 @@ onMounted(() => {
 <template>
   <VueLenis root>
     <AppHeader />
-    <slot />
+    <NuxtPage />
     <AppFooter />
     <PagesAppTransition />
   </VueLenis>

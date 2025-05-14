@@ -82,7 +82,7 @@ onMounted(() => {
     >
       <div class="overflow-hidden h-full w-full">
         <span
-          class="uppercase text-[60px] md:text-[220px] text-gray-900 bottom-5 right-5 absolute text-loader"
+          class="uppercase text-[60px] md:text-[180px] text-gray-900 bottom-5 right-5 absolute text-loader"
           v-text="loadingText"
         />
       </div>
