@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     'lenis/nuxt',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/seo'
   ],
   compatibilityDate: '2025-01-06',
   devtools: { enabled: true },
