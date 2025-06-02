@@ -33,7 +33,11 @@ export default defineNuxtConfig({
       mode: 'out-in'
     }
   },
-
+  sitemap: {
+    sources: [
+      '/api/__sitemap__/wordpress',
+    ],
+  },
   css: ['@/assets/css/main.css'],
    nitro: {
     compressPublicAssets: true,
