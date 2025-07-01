@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     'lenis/nuxt',
     '@nuxt/image',
-    '@nuxtjs/seo'
+    '@nuxtjs/seo',
+    '@dargmuesli/nuxt-cookie-control'
   ],
   compatibilityDate: '2025-01-06',
   devtools: { enabled: true },
