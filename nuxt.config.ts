@@ -19,6 +19,11 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: {
+        titleTemplate: (title) => {
+          // 🔍 Se `title` è già completo o sei nella home, evita il template
+          if (!title || title === 'home') return 'Mauro De Falco | Frontend Developer'
+          return `${title} | Mauro De Falco`
+        },
         lang: 'it',
       },
       meta: [
