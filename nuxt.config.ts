@@ -18,7 +18,6 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      title: 'Mauro De Falco | Frontend Developer',
       htmlAttrs: {
         lang: 'it',
       },
@@ -30,10 +29,6 @@ export default defineNuxtConfig({
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
-        pageTransition: {
-      name: 'page',
-      mode: 'out-in'
-    }
   },
   sitemap: {
     sources: [
