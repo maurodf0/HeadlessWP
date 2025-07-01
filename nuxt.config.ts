@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     'lenis/nuxt',
     '@nuxt/image',
     '@nuxtjs/seo',
-    '@dargmuesli/nuxt-cookie-control',
     '@nuxthub/core'
   ],
   compatibilityDate: '2025-01-06',
