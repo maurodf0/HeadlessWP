@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 
+const emit = defineEmits<{
+  (e: 'loaded'): void
+}>()
+
 
 const loading = ref('000') 
 function zeroPad(num: number, places: number): string {
@@ -43,6 +47,7 @@ onMounted(() => {
  onComplete: () => {
     const wrapper = document.querySelector('.app-loader-wrapper')
     if (wrapper) wrapper.remove()
+    emit('loaded')
   }
 },'<')
        .from('.glow-effect', { 
