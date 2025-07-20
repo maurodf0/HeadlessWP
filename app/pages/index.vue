@@ -134,23 +134,29 @@ const services: Array<SingleService> = [
         id: 1,
         icon: 'material-symbols-developer-mode-tv',
         title: 'Creative Developer',
-        description: 'Realizzo siti e app web ad alto impatto visivo e funzionale, con una forte attenzione ai dettagli.',
+        description: 'Realizzo siti ad alto impatto visivo e funzionale, con una forte attenzione ai dettagli.',
     },
     {
         id: 2,
+        icon: 'material-symbols-apps',
+        title: 'App Developer',
+        description: 'Realizzo app e web app funzionali ed utili, per rispondere ai bisogni dei tuoi clienti.',
+    },
+    {
+        id: 3,
         icon: 'material-symbols-shopping-bag-speed',
         title: 'Ecommerce Developer',
         description: 'Dai un boost alle tue vendite con un\'eperienza ecommerce personalizzata per il tuo brand e i tuoi prodotti.',
     },
     {
-        id: 3,
+        id: 4,
         icon: 'ri-figma-fill',
         title: 'UI/UX Designer',
         description: 'Realizzo esperienze di design e interazione utente intuitive e coinvolgenti.',
 
     },
     {
-        id: 4,
+        id: 5,
         icon: 'ri-seo-fill',
         title: 'SEO Specialist',
         description: 'Il tuo business non è online se non si fa trovare, attrai i tuoi clienti con un approccio SEO.',
