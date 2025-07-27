@@ -4,17 +4,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { VueLenis, useLenis } from 'lenis/vue'
 
 onMounted(() => {
-  const lenis = useLenis()
+  nextTick(() => {
+    const lenis = useLenis()
+    if (!lenis || typeof lenis.raf !== 'function') return
 
-  if (!lenis) return
+    const raf = (time: number) => {
+      lenis.raf(time)
+      ScrollTrigger.update()
+      requestAnimationFrame(raf)
+    }
 
-  const raf = (time: number) => {
-    lenis.raf(time)
-    ScrollTrigger.update()
     requestAnimationFrame(raf)
-  }
-
-  requestAnimationFrame(raf)
+  })
 })
 </script>
 

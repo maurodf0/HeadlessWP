@@ -41,6 +41,7 @@ const designprojects = <DesignProject[]>[
 
 <template>
 
+<div class="design-wrapper">
 <PagesIntroContent>
         <template #title>Design</template>
         <template #description>Tutti i progetti realizzati con Figma di UI/UX</template>
@@ -65,6 +66,7 @@ const designprojects = <DesignProject[]>[
         </li>
       </ul>
     </div>
+</div>
 </template>
 
 
