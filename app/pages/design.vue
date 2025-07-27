@@ -12,16 +12,16 @@ const designprojects = <DesignProject[]>[
 {
   id: 1,
   title: 'Roberto Acampora',
-  img: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/31cad2170967091.6466973cbd5df.png',
-  description: 'Roberto Acampora è un designer freelancer. Abbiamo realizzato il progetto del suo sito web personale, con un design minimalista e moderno, realizzato con Figma, sviluppato con WordPress e GSAP.',
+  img: 'roberto_acampora_design.webp',
+  description: 'Roberto Acampora è un designer freelancer. Abbiamo realizzato il progetto del suo sito web personale, con un design minimalista, moderno e animato, realizzato con Figma, sviluppato con WordPress e GSAP.',
   url: 'https://www.behance.net/gallery/170967091/-NEW-PERSONAL-WEBSITE-23-'
 },
 {
   id: 2,
-  title: 'Glide AI',
+  title: 'Grotta Romana',
   img: '/glide-ai.webp',
-  description: 'Glide AI è una landing page moderna sviluppata con Nuxt in architettura headless tramite Prismic CMS, che sfrutta le librerie GSAP e Lenis per animazioni avanzate',
-  url: ''
+  description: 'Grotta Romana è un progetto realizzato con Figma, per il redesign del sito web di un ristorante di lusso. Il progetto ha come obiettivo quello di migliorare l\'esperienza utente con un design moderno e accattivante.',
+  url: 'https://www.figma.com/design/DMyR8TJv2m8Af4hO4AJpWp/Grotta-Romana?node-id=0-1&t=qU3FDztlrdEvTfQp-1'
 },
 {
   id: 3,
