@@ -25,7 +25,13 @@
         label: 'Projects',
         url: '/projects',
     },
-]
+    {
+        key: 'design',
+        label: 'Design',
+        url: '/design',
+    },
+    
+    ];
 
 </script>
 
