@@ -44,7 +44,7 @@ const designprojects = <DesignProject[]>[
 <div class="design-wrapper">
 <PagesIntroContent>
         <template #title>Design</template>
-        <template #description>Tutti i progetti realizzati con Figma di UI/UX</template>
+        <template #description>  Progetto interfacce intuitive e moderne per web e mobile. Ecco una selezione di lavori realizzati con Figma, focalizzati su UI/UX design.</template>
     </PagesIntroContent>
 
     <div class="container max-w-[1080px] p-4 mx-auto">
