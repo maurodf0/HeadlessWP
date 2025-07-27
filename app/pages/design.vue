@@ -26,8 +26,8 @@ const designprojects = <DesignProject[]>[
 {
   id: 3,
   title: 'Grande Napoli Redesign',
-  img: '/ringston.webp',
-  description: 'Ringston è una landing page interattiva realizzata con HTML, CSS e JavaScript, che sfrutta le librerie GSAP, SplitType e Three.js per animazioni avanzate e grafica 3D',
+  img: '/gn.webp',
+  description: 'Grande Napoli Redesign è un progetto realizzato di Redesign di una tra le più grandi testate giornalistiche del sud. Il progetto è stato realizzato con Figma e ha come obiettivo quello di migliorare l\'esperienza utente e la fruizione dei contenuti e aummentare i guadagni tramite adv e publishing interno',
     url: 'https://www.figma.com/design/un0W2XRbjwKOEMaj2zfPiR/Grandenapoli.it?node-id=0-1&t=MWfBI5ucdx6OC0L0-1'
 },
 {
