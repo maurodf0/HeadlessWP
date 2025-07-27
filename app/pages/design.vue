@@ -33,8 +33,8 @@ const designprojects = <DesignProject[]>[
 {
   id: 4,
   title: 'Ammaccam',
-  img: '/SingleUserContentPlugin.webp',
-  description: 'WPSUC è un plugin WordPress che permette di creare contenuti privati visibili solo da un singolo utente registrato, tramite un custom post type.',
+  img: '/ammaccamm.webp',
+  description: 'Redesign di un sito web per una famosa pizzria di Pozzuoli.',
     url: 'https://www.behance.net/gallery/158201457/Ammaccamm-Website'
 }]  
 </script>
