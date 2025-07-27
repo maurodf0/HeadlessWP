@@ -27,14 +27,14 @@ const designprojects = <DesignProject[]>[
   id: 3,
   title: 'Grande Napoli Redesign',
   img: '/gn.webp',
-  description: 'Grande Napoli Redesign è un progetto realizzato di Redesign di una tra le più grandi testate giornalistiche del sud. Il progetto è stato realizzato con Figma e ha come obiettivo quello di migliorare l\'esperienza utente e la fruizione dei contenuti e aummentare i guadagni tramite adv e publishing interno',
+  description: 'Grande Napoli Redesign è un progetto realizzato di Redesign di una tra le più grandi testate giornalistiche del sud. Il progetto è stato realizzato con Figma e ha come obiettivo quello di migliorare l\'esperienza utente, la fruizione dei contenuti e aummentare i guadagni tramite adv',
     url: 'https://www.figma.com/design/un0W2XRbjwKOEMaj2zfPiR/Grandenapoli.it?node-id=0-1&t=MWfBI5ucdx6OC0L0-1'
 },
 {
   id: 4,
   title: 'Ammaccam',
   img: '/ammaccamm.webp',
-  description: 'Redesign di un sito web per una famosa pizzria di Pozzuoli.',
+  description: 'Redesign di un sito web per una famosa pizzria di Pozzuoli. Il progetto è stato realizzato con Figma e riprende lo stile del locale, con animazioni e focus sulla qualità dei prodotti.',
     url: 'https://www.behance.net/gallery/158201457/Ammaccamm-Website'
 }]  
 </script>
