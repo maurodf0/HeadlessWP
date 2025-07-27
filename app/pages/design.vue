@@ -57,7 +57,7 @@ const designprojects = <DesignProject[]>[
               <img :src="repo.img" alt="" class="w-full h-full object-cover rounded-lg mb-5" />
             </div>
             <div class="text-sm">
-              <div class="font-semibold">{{ repo.title }}</div>
+              <h4 class="font-semibold text-xl">{{ repo.title }}</h4>
               <p class="text-sm mb-0" >{{ repo.description }}</p>
             </div>
    
