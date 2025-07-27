@@ -11,10 +11,10 @@ interface DesignProject {
 const designprojects = <DesignProject[]>[
 {
   id: 1,
-  title: 'Anime Tracker',
-  img: '/AnimeTracker.png',
-  description: 'Anime Tracker è una web app in Vue, Nuxt e Tailwind CSS per tenere traccia degli anime visti o da vedere, con salvataggio dati in localStorage e gestione dello stato via composables.',
-  url: ''
+  title: 'Roberto Acampora',
+  img: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/31cad2170967091.6466973cbd5df.png',
+  description: 'Roberto Acampora è un designer freelancer. Abbiamo realizzato il progetto del suo sito web personale, con un design minimalista e moderno, realizzato con Figma, sviluppato con WordPress e GSAP.',
+  url: 'https://www.behance.net/gallery/170967091/-NEW-PERSONAL-WEBSITE-23-'
 },
 {
   id: 2,
@@ -25,17 +25,17 @@ const designprojects = <DesignProject[]>[
 },
 {
   id: 3,
-  title: 'Ringston',
+  title: 'Grande Napoli Redesign',
   img: '/ringston.webp',
   description: 'Ringston è una landing page interattiva realizzata con HTML, CSS e JavaScript, che sfrutta le librerie GSAP, SplitType e Three.js per animazioni avanzate e grafica 3D',
-    url: ''
+    url: 'https://www.figma.com/design/un0W2XRbjwKOEMaj2zfPiR/Grandenapoli.it?node-id=0-1&t=MWfBI5ucdx6OC0L0-1'
 },
 {
   id: 4,
-  title: 'Single User Content',
+  title: 'Ammaccam',
   img: '/SingleUserContentPlugin.webp',
   description: 'WPSUC è un plugin WordPress che permette di creare contenuti privati visibili solo da un singolo utente registrato, tramite un custom post type.',
-    url: ''
+    url: 'https://www.behance.net/gallery/158201457/Ammaccamm-Website'
 }]  
 </script>
 
