@@ -12,14 +12,14 @@ const designprojects = <DesignProject[]>[
 {
   id: 1,
   title: 'Roberto Acampora',
-  img: 'roberto_acampora_design.webp',
+  img: '/roberto_acampora_design.webp',
   description: 'Roberto Acampora è un designer freelancer. Abbiamo realizzato il progetto del suo sito web personale, con un design minimalista, moderno e animato, realizzato con Figma, sviluppato con WordPress e GSAP.',
   url: 'https://www.behance.net/gallery/170967091/-NEW-PERSONAL-WEBSITE-23-'
 },
 {
   id: 2,
   title: 'Grotta Romana',
-  img: '/glide-ai.webp',
+  img: '/gr.webp',
   description: 'Grotta Romana è un progetto realizzato con Figma, per il redesign del sito web di un ristorante di lusso. Il progetto ha come obiettivo quello di migliorare l\'esperienza utente con un design moderno e accattivante.',
   url: 'https://www.figma.com/design/DMyR8TJv2m8Af4hO4AJpWp/Grotta-Romana?node-id=0-1&t=qU3FDztlrdEvTfQp-1'
 },
