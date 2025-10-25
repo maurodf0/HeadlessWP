@@ -5,6 +5,9 @@ const emit = defineEmits<{
   (e: 'loaded'): void
 }>()
 
+const {progress} = useLoadingIndicator();
+
+console.log(`Loaded ${progress.value}`);
 
 const loading = ref('000') 
 function zeroPad(num: number, places: number): string {

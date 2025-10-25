@@ -33,6 +33,11 @@
     
     ];
 
+    const {progress} = useLoadingIndicator();
+
+console.log(`Loaded ${progress.value}`);
+
+
 </script>
 
 <template>

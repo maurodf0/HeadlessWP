@@ -17,6 +17,24 @@ onMounted(() => {
     requestAnimationFrame(raf)
   })
 })
+
+useHead({
+  script: [
+    {
+      src: "https://bubblet.app/plugin.js",
+      "data-key": "ZxpK1BODCCRZ0ZjVQsqEWGVvcEW2",
+      "data-primary": "#b2f526",
+      "data-base": "#111111",
+      "data-neutral": "#252525",
+      "data-text": "#eaeaea",
+      "data-anchor": "bottom right",
+      "data-size": "md",
+      "data-fontfamily": "Geist",
+      "data-zindex": "500",
+      defer: true
+    }
+  ]
+})
 </script>
 
 <template>
