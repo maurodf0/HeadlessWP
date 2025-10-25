@@ -1,6 +1,4 @@
 <script setup lang="ts">
-    const { data } = await useFetch('https://wp.maurodefalco.it/wp-json/');
-
     const isOpen = ref(false);
 
     interface Link {
@@ -32,10 +30,6 @@
     },
     
     ];
-
-    const {progress} = useLoadingIndicator();
-
-console.log(`Loaded ${progress.value}`);
 
 
 </script>
