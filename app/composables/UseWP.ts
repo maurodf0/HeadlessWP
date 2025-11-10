@@ -25,7 +25,7 @@ const API_URL:string = "https://wp.maurodefalco.it/wp-json/wp/v2/"
 export const UseWP = () => {
 
     const getPostBySlug = async (slug: string) => {
-    const res = await fetch(`${API_URL}/posts?slug=${slug}`)
+    const res = await fetch(`${API_URL}/posts?slug=${slug}&_embed`)
     if (!res.ok) throw new Error("Errore nel recupero del post")
     const data = await res.json()
     return data[0]
@@ -33,9 +33,7 @@ export const UseWP = () => {
 
   const getCategories
   const getPages
-
-  const { data: singlePosts, loading, error } = await useFetch<WpPost[]>(`${API_URL}posts?slug=${slug}&_embed`); 
-
+  
   return {
   getPostBySlug,
     getCategories,
