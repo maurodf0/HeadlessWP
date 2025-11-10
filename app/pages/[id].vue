@@ -2,11 +2,32 @@
 
 import { gsap } from 'gsap'
 
+interface WpPost {
+  id: number;
+  title: { rendered: string };
+  excerpt: { rendered: string };
+  content: { rendered: string };
+  date: string;
+  _embedded: {
+    'wp:featuredmedia': Array<{
+      source_url: string;
+    }>;
+    author: Array<{
+      name: string;
+      avatar_urls: { [key: string]: string };
+    }>;
+    'wp:term': Array<Array<{
+      id: number;
+      name: string;
+      slug: string;
+    }>>;
+  };
+}
 
     
     const route = useRoute();
     const slug = route.params.id as string;
-    
+    const { data: singlePosts, loading, error } = await useFetch<WpPost[]>(`https://wp.maurodefalco.it/wp-json/wp/v2/posts?slug=${slug}&_embed`); 
 
 if (!singlePosts.value[0]) {
       console.error('Error fetching post:', error);

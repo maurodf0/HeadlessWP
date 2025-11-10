@@ -31,12 +31,9 @@ export const UseWP = () => {
     return data[0]
   }
 
-  const getCategories
-  const getPages
-  
+
+
   return {
   getPostBySlug,
-    getCategories,
-    getPages
   }
 }
