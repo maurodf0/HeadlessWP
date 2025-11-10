@@ -22,7 +22,7 @@ interface WpPost {
 
 const API_URL:string = "https://wp.maurodefalco.it/wp-json/wp/v2/"
 
-export default const UseWP = () => {
+export const UseWP = () => {
 
     const getPostBySlug = async (slug: string) => {
     const res = await fetch(`${API_URL}/posts?slug=${slug}`)
