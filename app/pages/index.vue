@@ -98,7 +98,7 @@ const projects: Array<SingleProject> = [
         title: 'Farbe Ecommerce',
         description: 'Farbe è un ecommerce sviluppato con Vue Nuxt, GSAP, Three.js (Tres) con pagamento tramite Stripe API.',
         tech: ['Nuxt', 'Vue', 'GSAP', 'Stripe', 'Tres'],
-        image: '/Farbe.png',
+        image: '/farbe-min.webp',
         url: 'https://nuxt-tres-ecommerce-stripe.pages.dev/',
         github: 'https://github.com/maurodf0/nuxt-tres-ecommerce',
     },
