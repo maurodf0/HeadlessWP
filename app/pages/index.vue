@@ -93,8 +93,17 @@ const projects: Array<SingleProject> = [
         url: 'https://anime-tracker-delta.vercel.app/',
         github: 'https://github.com/maurodf0/anime-tracker',
     },
-    {
+        {
         id: 2,
+        title: 'Farbe Ecommerce',
+        description: 'Farbe è un ecommerce sviluppato con Vue Nuxt, GSAP, Three.js (Tres) con pagamento tramite Stripe API.',
+        tech: ['Nuxt', 'Vue', 'GSAP', 'Stripe', 'Tres'],
+        image: '/Farbe.png',
+        url: 'https://nuxt-tres-ecommerce-stripe.pages.dev/',
+        github: 'https://github.com/maurodf0/nuxt-tres-ecommerce',
+    },
+    {
+        id: 3,
         title: 'Glide AI',
         description: 'Glide AI è una landing page moderna sviluppata con Nuxt in architettura headless tramite Prismic CMS, che sfrutta le librerie GSAP e Lenis per animazioni avanzate',
         tech: ['Nuxt', 'Vue', 'Prismic', 'GSAP', 'Lenis'],
@@ -103,7 +112,7 @@ const projects: Array<SingleProject> = [
         github: 'https://github.com/maurodf0/glide-ai'
     },
     {
-        id: 3,
+        id: 4,
         title: 'Ringston',
         description: 'Ringston è una landing page interattiva realizzata con HTML, CSS e JavaScript, che sfrutta le librerie GSAP, SplitType e Three.js per animazioni avanzate e grafica 3D',
         tech: ['GSAP', 'Three.js', 'Lenis'],
@@ -112,7 +121,7 @@ const projects: Array<SingleProject> = [
         github: 'https://github.com/maurodf0/ringston'
     },
     {
-        id: 4,
+        id: 5,
         title: 'Single User Content',
         description: 'WPSUC è un plugin WordPress che permette di creare contenuti privati visibili solo da un singolo utente registrato, tramite un custom post type.',
         tech: ['Php', 'WordPress'],
@@ -120,6 +129,7 @@ const projects: Array<SingleProject> = [
         url: 'https://it.wordpress.org/plugins/single-user-content/',
         github: 'https://github.com/maurodf0/wpsuc'
     },
+    
 ]
 
 interface SingleService {
